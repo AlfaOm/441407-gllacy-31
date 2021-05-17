@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Александр Фатькин](https://up.htmlacademy.ru/htmlcss/31/user/441407).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Иовлев] (https://htmlacademy.ru/profile/skywalker).
 
 ---
 
