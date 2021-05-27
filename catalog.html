@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Глейси</title>
+  <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
   <header>
     <nav>
       <a href="index.html">
-        <img src="img/index-logo.svg" alt="Логотип магазина мороженого Глэйси">
+        <img src="img/svg/logo.svg" width="154" height="64" alt="Логотип магазина мороженого Глэйси">
       </a>
       <ul>
         <li>
@@ -38,7 +39,7 @@
     </nav>
   </header>
   <main class="inner-page">
-    <ul>
+    <ul class="breadcrumbs">
       <li><a href="index.html">Главная</a></li>
       <li><a href="#">Каталог</a></li>
       <li><a>Сливочное</a></li>
@@ -51,6 +52,9 @@
           <legend>Сортировка:</legend>
           <select name="#" id="#">
             <option value="popular">по популярности</option>
+            <option value="inexpensive">сначала недорогие</option>
+            <option value="expensive">сначала дорогие</option>
+            <option value="fat-content">по жирности</option>
           </select>
         </fieldset>
         <fieldset>
@@ -115,7 +119,7 @@
         <li>
           <h3>Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+            <img src="img/catalog/orange-jam.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
           </p>
           <p>
             310 ₽<span>/кг</span>
@@ -127,7 +131,7 @@
         <li>
           <h3>Сливочно-кофейное с кусочками шоколада</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
+            <img src="img/catalog/coffee-chocolate.jpg" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
           </p>
           <p>
             380 ₽<span>/кг</span>
@@ -139,7 +143,7 @@
         <li>
           <h3>Сливочно-клубничное с присыпкой из белого шоколада</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+            <img src="img/catalog/strawberries-white-chocolate.jpg" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
           </p>
           <p>
             355 ₽<span>/кг</span>
@@ -151,7 +155,7 @@
         <li>
           <h3>Сливочное крем-брюле с карамельной подливкой</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
+            <img src="img/catalog/cream-caramel.jpg" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
           </p>
           <p>
             415 ₽<span>/кг</span>
@@ -163,7 +167,7 @@
         <li>
           <h3>Сливочное с брусничным джемом</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочное с брусничным джемом">
+            <img src="img/catalog/cowberries-jam.jpg" width="267" height="267" alt="Сливочное с брусничным джемом">
           </p>
           <p>
             325 ₽<span>/кг</span>
@@ -175,7 +179,7 @@
         <li>
           <h3>Сливочно-черничное с цельными ягодами черники</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочно-черничное с цельными ягодами черники">
+            <img src="img/catalog/bilberries-whortleberry.jpg" width="267" height="267" alt="Сливочно-черничное с цельными ягодами черники">
           </p>
           <p>
             410 ₽<span>/кг</span>
@@ -187,7 +191,7 @@
         <li>
           <h3>Сливочно-лимонное с карамельной присыпкой</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочно-лимонное с карамельной присыпкой">
+            <img src="img/catalog/lemon-caramel.jpg" width="267" height="267" alt="Сливочно-лимонное с карамельной присыпкой">
           </p>
           <p>
             315 ₽<span>/кг</span>
@@ -199,7 +203,7 @@
         <li>
           <h3>Сливочное с шоколадной стружкой</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочное с шоколадной стружкой">
+            <img src="img/catalog/chocolate-chips.jpg" width="267" height="267" alt="Сливочное с шоколадной стружкой">
           </p>
           <p>
             320 ₽<span>/кг</span>
@@ -211,7 +215,7 @@
         <li>
           <h3>Сливочно-ванильное с кусочками шоколада</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочно-ванильное с кусочками шоколада">
+            <img src="img/catalog/vanilla-chocolate-pieces.jpg" width="267" height="267" alt="Сливочно-ванильное с кусочками шоколада">
           </p>
           <p>
             440 ₽<span>/кг</span>
@@ -223,7 +227,7 @@
         <li>
           <h3>Сливочноe с ментоловым сиропом</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочноe с ментоловым сиропом">
+            <img src="img/catalog/menthol-syrup.jpg" width="267" height="267" alt="Сливочноe с ментоловым сиропом">
           </p>
           <p>
             435 ₽<span>/кг</span>
@@ -235,7 +239,7 @@
         <li>
           <h3>Сливочное с кусочками черного шоколада</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочное с кусочками черного шоколада">
+            <img src="img/catalog/chocolate-pieces.jpg" width="267" height="267" alt="Сливочное с кусочками черного шоколада">
           </p>
           <p>
             355 ₽<span>/кг</span>
@@ -247,7 +251,7 @@
         <li>
           <h3>Сливочное с мятным сиропом</h3>
           <p>
-            <img src="img/" width="267" height="267" alt="Сливочное с мятным сиропом">
+            <img src="img/catalog/peppermint-syrup.jpg" width="267" height="267" alt="Сливочное с мятным сиропом">
           </p>
           <p>
             420 ₽<span>/кг</span>
