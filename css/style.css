@@ -1,54 +1,57 @@
 :root {
-  --basic-red-gradient: linear-gradient(180deg, #f26843 0%, #e74a35 100%);
-  --basic-red-gradient-hover: linear-gradient(
+  --red-gradient: linear-gradient(180deg, #f26843 0%, #e74a35 100%);
+  --red-gradient-hover: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.2),
       rgba(255, 255, 255, 0.2)
     ),
     linear-gradient(180deg, #f26843 0%, #e74a35 100%);
 
-  --basic-red-gradient-active: linear-gradient(
+  --red-gradient-active: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.07),
       rgba(0, 0, 0, 0.07)
     ),
     linear-gradient(180deg, #f26843 0%, #e74a35 100%);
 
-  --basic-button-popup-b-shadow: 0px 1px 2px rgba(172, 16, 0, 0.25);
+  --button-b-shadow: rgba(172, 16, 0, 0.64);
+  --button-b-sh-hover: #ac1000;
+  --button-b-sh-active: #942718;
+  --button-popup-b-shadow: 0px 1px 2px rgba(172, 16, 0, 0.25);
 
-  --basic-text-shadow-button: 0px 2px 5px rgba(160, 32, 11, 0.76);
-  --basic-background-popup: #f8f7f4;
-  --basic-background-hover: #fbded7;
-  --basic-background-active: #f6b5a5;
-  --basic-background-current: #d07058;
-  --basic-background-body: #849d8f;
-  --basic-background-subscribe: #f8f7f4;
-  --basic-background-address: #fefefe;
-  --basic-white: #ffffff;
-  --basic-black: #323232;
-  --basic-white-opacity: rgba(255, 255, 255, 0.2);
-  --basic-input-text: #999999;
-  --basic-link: #ffbc9e;
-  --basic-link-td: rgba(255, 188, 158, 0.3);
-  --basic-link-on-white: #e84d37;
-  --basic-link-on-white-td: rgba(232, 77, 55, 0.3);
-  --basic-text-subscribe: #5a5a5a;
+  --text-shadow-button: 0px 2px 5px rgba(160, 32, 11, 0.76);
+  --border-input: #d3d3d2;
+  --border-input-modal: rgba(178, 178, 178, 0.52);
+  --border-input-focus: rgba(46, 136, 228, 0.52);
+  --background-popup: #f8f7f4;
+  --background-hover: #fbded7;
+  --background-active: #f6b5a5;
+  --background-current: #d07058;
+  --background-body: #849d8f;
+  --background-subscribe: #f8f7f4;
+  --background-address: #fefefe;
+  --white: #ffffff;
+  --black: #323232;
+  --white-opacity: rgba(255, 255, 255, 0.2);
+  --input-text: #999999;
+  --link: #ffbc9e;
+  --link-td: rgba(255, 188, 158, 0.3);
+  --link-on-white: #e84d37;
+  --link-on-white-td: rgba(232, 77, 55, 0.3);
+  --text-subscribe: #5a5a5a;
 }
 
 body {
   min-width: 960px;
-  /* margin: 0;
-  padding: 0; */
-  width: 1200px;
-  margin: 0 auto;
-  padding: 10px 27px 25px 27px;
+  margin: 0;
+  padding: 0;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 22px;
   font-weight: 400;
-  color: var(--basic-white);
-  background-color: var(--basic-background-body);
-  background-image: url("../img/background/background1.png");
+  color: var(--white);
+  background-color: var(--background-body);
+  /* background-image: url("../img/background/background1.png"); */
 }
 
 .visually-hidden {
@@ -68,7 +71,7 @@ body {
   font-size: 16px;
   line-height: 18px;
   font-weight: 700;
-  color: var(--basic-white);
+  color: var(--white);
 }
 
 .site-navigation,
@@ -78,31 +81,31 @@ body {
 
 .site-navigation > li > a {
   text-decoration: none;
-  color: var(--basic-white);
+  color: var(--white);
 }
 
 .site-navigation > li > a {
   text-decoration: underline;
-  text-decoration-color: var(--basic-white-opacity);
+  text-decoration-color: var(--white-opacity);
 }
 
 .site-navigation a:hover,
 .site-navigation a:focus {
-  color: var(--basic-black);
-  background-color: var(--basic-white);
+  color: var(--black);
+  background-color: var(--white);
 }
 
 .dropdown {
   display: block;
   width: 143px;
-  background-color: var(--basic-white);
+  background-color: var(--white);
 }
 
 .submenu > li {
   font-size: 14px;
   line-height: 30px;
   font-weight: 700;
-  color: var(--basic-black);
+  color: var(--black);
 }
 
 .submenu > li > a {
@@ -110,92 +113,65 @@ body {
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
-  color: var(--basic-black);
+  color: var(--black);
 }
 
 .submenu > li > a:hover,
 .submenu > li > a:focus {
-  background-color: var(--basic-background-hover);
+  background-color: var(--background-hover);
 }
 
 .submenu > li > a:active {
-  background-color: var(--basic-background-active);
-}
-
-input[type="search"],
-input[type="email"],
-input[type="password"],
-input[type="text"],
-textarea {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-  vertical-align: middle;
-  color: var(--basic-input-text);
-  border: 1px solid rgba(178, 178, 178, 0.52);
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding-left: 15px;
-  padding-right: 0;
-}
-
-input[type="search"]:hover,
-input[type="email"]:hover,
-input[type="password"]:hover,
-input[type="text"]:hover,
-textarea:hover {
-  border: 2px solid;
-  border-color: rgba(178, 178, 178, 0.52);
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-
-input[type="search"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="text"]:focus,
-textarea:focus {
-  border: 2px solid;
-  border-color: rgba(46, 136, 228, 0.52);
-  box-sizing: border-box;
-  border-radius: 4px;
-  font-weight: 700;
-  color: var(--basic-black);
+  background-color: var(--background-active);
 }
 
 /* Поиск, вход, корзина */
+
+/* Форма поиска */
 
 .search-form {
   display: block;
   width: 341px;
   height: 84px;
-  background: var(--basic-background-popup);
+  background: var(--background-popup);
   border-radius: 4px;
 }
 
 .search-form input {
   width: 311px;
   height: 44px;
+  border: 1px solid var(--border-input);
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 0;
   margin-top: 20px;
   margin-left: 15px;
 }
 
-.form-registration {
-  display: block;
-  width: 277px;
-  height: 214px;
-  background: var(--basic-background-popup);
-  border-radius: 4px;
+.search-form input:hover {
+  border: 2px solid var(--border-input);
 }
 
-.form-registration input {
-  width: 241px;
-  height: 44px;
-  margin-top: 20px;
-  margin-left: 19px;
-  margin-right: 17px;
-  margin-bottom: 0px;
+.search-form input:focus {
+  border: 2px solid var(--border-input-focus);
 }
+
+.search-form input::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  vertical-align: middle;
+  color: var(--input-text);
+}
+
+/* ПОЛЕ С ВВЕДЕННЫМИ ДАННЫМИ */
+.search-form input:valid {
+  font-weight: 700;
+}
+
+/* Кнопки входа и корзины */
 
 .login-link,
 .main-cart {
@@ -203,29 +179,78 @@ textarea:focus {
   line-height: 16px;
   font-weight: 500;
   text-decoration: none;
-  color: var(--basic-white);
-  background-color: var(--basic-white-opacity);
+  color: var(--white);
+  background-color: var(--white-opacity);
 }
 
 .login-link:hover,
 .login-link:focus,
 .main-cart:hover,
 .main-cart:focus {
-  color: var(--basic-black);
-  background-color: var(--basic-white);
+  color: var(--black);
+  background-color: var(--white);
+}
+
+/* Popup формы входа */
+
+.form-registration {
+  display: block;
+  width: 277px;
+  height: 214px;
+  background: var(--background-popup);
+  border-radius: 4px;
+}
+
+.form-registration input {
+  width: 241px;
+  height: 44px;
+  border: 1px solid var(--border-input);
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 15px;
+  margin-top: 20px;
+  margin-left: 19px;
+  margin-right: 17px;
+  margin-bottom: 0px;
+}
+
+.form-registration input:hover {
+  border: 2px solid var(--border-input);
+}
+
+.form-registration input:focus {
+  border: 2px solid var(--border-input-focus);
+}
+
+.form-registration input::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  vertical-align: middle;
+  color: var(--input-text);
+}
+
+.form-registration input:valid {
+  font-weight: 700;
+}
+
+.form-registration input[type="email"]:focus {
+  font-weight: 700;
 }
 
 .button-link {
   width: 103px;
   height: 44px;
-  background: var(--basic-red-gradient);
-  box-shadow: var(--basic-button-popup-b-shadow);
+  background: var(--red-gradient);
+  box-shadow: var(--button-popup-b-shadow);
   border: none;
   border-radius: 26px;
-  color: var(--basic-white);
+  color: var(--white);
   font-size: 18px;
   font-weight: 700;
   line-height: 16px;
+
   float: left;
   margin-top: 20px;
   margin-left: 19px;
@@ -248,14 +273,16 @@ textarea:focus {
   font-size: 13px;
   font-weight: 400;
   line-height: 15px;
-  color: var(--basic-black);
+  color: var(--black);
   margin-top: 25px;
 }
 
 .login-help:hover {
-  color: var(--basic-link-on-white);
-  text-decoration-color: var(--basic-link-on-white-td);
+  color: var(--link-on-white);
+  text-decoration-color: var(--link-on-white-td);
 }
+
+/* Здесь будет popup корзины */
 
 .work-hours {
   font-size: 14px;
@@ -268,7 +295,7 @@ textarea:focus {
   font-size: 22px;
   line-height: 24px;
   font-weight: 700;
-  color: var(--basic-white);
+  color: var(--white);
 }
 
 .container {
@@ -289,6 +316,11 @@ textarea:focus {
   list-style: none;
 }
 
+/* расхождение размера с макетом ??? */
+.slider-list img {
+  transform: scale(0.89);
+}
+
 .slider-control {
   list-style: none;
 }
@@ -300,26 +332,27 @@ textarea:focus {
   display: inline-block;
   text-align: center;
   font-size: 32px;
-  line-height: 44px;
-  letter-spacing: 1px;
   font-weight: 700;
-  text-shadow: var(--basic-text-shadow-button);
+  line-height: 44px;
+  letter-spacing: 1px; /*проверить*/
 
-  color: var(--basic-white);
-  background: var(--basic-red-gradient);
-  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
+  text-shadow: var(--text-shadow-button);
+
+  color: var(--white);
+  background: var(--red-gradient);
+  box-shadow: 0px 2px 2px var(--button-b-shadow);
   border-radius: 70px;
 }
 
 .button:hover,
 .button:focus {
-  background: var(--basic-red-gradient-hover);
-  box-shadow: 0px 2px 2px #ac1000;
+  background: var(--red-gradient-hover);
+  box-shadow: 0px 2px 2px var(--button-b-sh-hover);
 }
 
 .button:active {
-  background: var(--basic-red-gradient-active);
-  box-shadow: inset 0px 2px 2px #942718;
+  background: var(--red-gradient-active);
+  box-shadow: inset 0px 2px 2px var(--button-b-sh-active);
 }
 
 /* Секция с бонусами */
@@ -353,14 +386,14 @@ textarea:focus {
 
 .bonus-text {
   font-size: 18px;
-  line-height: 22px;
   font-weight: 700;
+  line-height: 22px;
 }
 
 .button-bonus {
   font-size: 18px;
-  line-height: 24px;
   font-weight: 700;
+  line-height: 24px;
 }
 
 /* Каталог. Хиты продаж */
@@ -374,19 +407,19 @@ textarea:focus {
 }
 
 .catalog-item {
-  display: inline-block;
+  display: inline-block; /*временно*/
   position: relative;
   width: 267px;
   height: 324px;
 }
 
 .catalog-list h3 {
-  font-weight: 500;
   font-size: 16px;
+  font-weight: 500;
   line-height: 22px;
   text-align: center;
   text-decoration: underline;
-  text-decoration-color: var(--basic-white-opacity);
+  text-decoration-color: var(--white-opacity);
 }
 
 .catalog-img img {
@@ -395,8 +428,8 @@ textarea:focus {
 
 .catalog-price {
   font-size: 45px;
-  line-height: 45px;
   font-weight: 700;
+  line-height: 45px;
 }
 
 .catalog-price span {
@@ -405,24 +438,21 @@ textarea:focus {
 }
 
 .catalog-item-block::after {
-  /* display: none; */
   content: "";
   position: absolute;
   top: 0px;
   left: -13px;
   width: 293px;
   height: 402px;
-  background-color: var(--basic-white-opacity);
+  background-color: var(--white-opacity);
 }
 
 .button-catalog {
-  /* position: absolute; */
-  bottom: 21px;
   left: 46px;
   width: 200px;
   height: 44px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 30px; /* в макете 24*/
   text-align: center;
   padding: 12px 16px 0px 16px;
 }
@@ -436,7 +466,7 @@ textarea:focus {
   border-radius: 50%;
   background-image: url(../img/svg/hit.svg);
   background-repeat: no-repeat;
-  background-color: var(--basic-white);
+  background-color: var(--white);
   background-position: 50% 50%;
   text-align: center;
 }
@@ -447,15 +477,14 @@ textarea:focus {
   width: 1146px;
   height: auto;
   background-image: url(../img/pattern-waffle.jpg);
-  /* background-repeat: no-repeat; */
   border-radius: 16px;
 }
 
 .about h2 {
   font-size: 24px;
-  line-height: 30px;
   font-weight: 500;
-  color: var(--basic-black);
+  line-height: 30px;
+  color: var(--black);
 }
 
 .about-list {
@@ -466,9 +495,9 @@ textarea:focus {
 
 .about-list-item {
   font-size: 16px;
-  line-height: 22px;
   font-weight: 400;
-  color: var(--basic-black);
+  line-height: 22px;
+  color: var(--black);
 }
 
 .about-list-item::before {
@@ -476,7 +505,7 @@ textarea:focus {
   position: absolute;
   width: 49px;
   height: 49px;
-  border: 2px solid #323232;
+  border: 2px solid #323232; /*root*/
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -510,25 +539,25 @@ textarea:focus {
 
 .new-blog h2 {
   font-size: 16px;
-  line-height: 22px;
   font-weight: 500;
-  color: var(--basic-black);
+  line-height: 22px;
+  color: var(--black);
 }
 
 .blog-link {
   display: block;
   text-decoration: underline;
-  color: var(--basic-black);
   font-size: 24px;
   font-weight: 700;
   line-height: 30px;
+  color: var(--black);
   width: 287px;
 }
 
 .blog-link:hover,
 .blog-link:active {
-  color: var(--basic-link-on-white);
-  text-decoration-color: var(--basic-link-on-white-td);
+  color: var(--link-on-white);
+  text-decoration-color: var(--link-on-white-td);
 }
 
 /* Подписка */
@@ -540,7 +569,6 @@ textarea:focus {
   height: 220px;
   background-image: url(../img/background/background-post.png);
   background-repeat: no-repeat;
-  margin-bottom: 40px;
 }
 
 .subscribe-wrap {
@@ -550,28 +578,54 @@ textarea:focus {
   left: 6px;
   z-index: 2;
   border-radius: 16px;
-  background: var(--basic-background-subscribe);
+  background: var(--background-subscribe);
   width: 548px;
   height: 210px;
 }
 
 .subscribe-text {
-  color: var(--basic-text-subscribe);
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
-  /* margin-top: 29px; */
+  color: var(--text-subscribe);
 }
 
-.subscribe-wrap input[type="email"] {
+.subscribe-wrap input {
+  width: 368px;
+  height: 44px;
+  border: 1px solid var(--border-input-modal);
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 0;
+  margin-left: 20px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.subscribe-wrap input:hover {
+  border: 2px solid var(--border-input);
+}
+
+.subscribe-wrap input:focus {
+  border: 2px solid var(--border-input-focus);
+}
+
+.subscribe-wrap input::placeholder {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  width: 368px;
-  height: 44px;
-  margin-left: 20px;
-  margin-right: 10px;
-  /* color: var(--basic-input-text); */
+  vertical-align: middle;
+  color: var(--input-text);
+}
+
+/* ПОЛЕ С ВВЕДЕННЫМИ ДАННЫМИ */
+.subscribe-wrap input:valid {
+  font-weight: 700;
+}
+
+.subscribe-wrap input[type="email"]:focus {
+  font-weight: 700;
 }
 
 .button-submit {
@@ -602,25 +656,21 @@ textarea:focus {
 .contacts-address {
   width: 303px;
   height: 306px;
-  background: var(--basic-background-address);
+  background: var(--background-address);
   border-radius: 16px;
   font-size: 14px;
-  font-weight: 400;
   font-style: normal;
   line-height: 20px;
-  color: var(--basic-black);
+  color: var(--black);
 }
 
 .contacts-address span,
-.contacts-address a {
+.contacts-address .contacts-phone {
+  text-decoration: none;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
-  color: var(--basic-black);
-}
-
-.contacts-address .contacts-phone {
-  text-decoration: none;
+  color: var(--black);
 }
 
 .contacts-address p {
@@ -632,10 +682,10 @@ textarea:focus {
 }
 
 .button-feedback {
-  font-size: 18px;
-  line-height: 24px;
   width: 253px;
   height: 43px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 /* Footer */
@@ -653,34 +703,42 @@ textarea:focus {
   fill-opacity: 1;
 }
 
+.social-button:active path {
+  stroke-opacity: 0.7;
+}
+
 /* Блок с дополнительной информацией */
 
 .additional-info {
   list-style: none;
+  position: relative;
 }
 
 .additional-info a {
   text-decoration: none;
-  border-bottom: 1px solid var(--basic-white-opacity);
+  border-bottom: 1px solid var(--white-opacity);
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
-  color: var(--basic-white);
+  color: var(--white);
 }
 
 .additional-info a:hover,
 .additional-info a:focus,
 .additional-info a:active {
-  color: var(--basic-link);
-  border-bottom: 1px solid var(--basic-link-td);
+  color: var(--link);
+  border-bottom: 1px solid var(--link-td);
 }
 
 .additional-info li:first-child a {
   font-weight: 700;
 }
 
-.additional-info li:first-child {
+.additional-info li:first-child::before {
   content: "";
+  position: absolute;
+  width: 15px;
+  height: 13px;
   background-image: url(../img/svg/heart.svg);
   background-repeat: no-repeat;
 }
@@ -695,15 +753,15 @@ textarea:focus {
 
 .copyright-link {
   text-decoration: underline;
-  color: var(--basic-white);
-  text-decoration-color: var(--basic-white-opacity);
+  color: var(--white);
+  text-decoration-color: var(--white-opacity);
 }
 
 .copyright-link:hover,
 .copyright-link:focus,
 .copyright-link:active {
-  color: var(--basic-link);
-  text-decoration-color: var(--basic-link-td);
+  color: var(--link);
+  text-decoration-color: var(--link-td);
 }
 
 /* Модальное окно */
@@ -712,7 +770,7 @@ textarea:focus {
   display: block;
   width: 477px;
   height: 441px;
-  background: var(--basic-background-popup);
+  background: var(--background-popup);
   border-radius: 6px;
 }
 
@@ -720,27 +778,63 @@ textarea:focus {
   font-size: 24px;
   font-weight: 500;
   line-height: 28px;
-  color: var(--basic-black);
+  color: var(--black);
   margin-top: 20px;
 }
 
 .modal input,
-.modal input {
+.modal textarea {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+  border: 1px solid var(--border-input-modal);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 14px;
+  padding-right: 0;
   width: 267px;
   height: 44px;
   margin-left: 24px;
 }
 
-textarea {
+.modal textarea {
+  width: 428px;
+  height: 154px;
+  padding-top: 16px;
+}
+
+.modal input:hover,
+.modal textarea:hover {
+  border: 2px solid var(--border-input-modal);
+}
+
+.modal input:focus,
+.modal textarea:focus {
+  border: 2px solid var(--border-input-focus);
+  outline: none;
+}
+
+.modal input::placeholder,
+.modal textarea::placeholder {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  width: 428px;
-  height: 154px;
-  margin-left: 24px;
+  vertical-align: middle;
+  color: var(--input-text);
+}
+
+/* ПОЛЕ С ВВЕДЕННЫМИ ДАННЫМИ */
+.modal input:valid {
+  font-weight: 700;
+}
+
+.modal input[type="email"]:focus {
+  font-weight: 700;
+}
+
+.modal textarea:focus {
+  font-weight: 700;
+  color: var(--black);
 }
 
 .modal .button-submit {
