@@ -24,6 +24,8 @@
   --border-input-modal: rgba(178, 178, 178, 0.52);
   --border-input-focus: rgba(46, 136, 228, 0.52);
   --background-popup: #f8f7f4;
+  --bx-shadow-popup: rgba(0, 0, 0, 0.4);
+  --bx-shadow-menu: #696969;
   --background-hover: #fbded7;
   --background-active: #f6b5a5;
   --background-current: #d07058;
@@ -32,6 +34,7 @@
   --background-address: #fefefe;
   --white: #ffffff;
   --black: #323232;
+  --black-cart: #000000;
   --white-opacity: rgba(255, 255, 255, 0.2);
   --input-text: #999999;
   --link: #ffbc9e;
@@ -51,7 +54,6 @@ body {
   font-weight: 400;
   color: var(--white);
   background-color: var(--background-body);
-  /* background-image: url("../img/background/background1.png"); */
 }
 
 .visually-hidden {
@@ -80,25 +82,33 @@ body {
 }
 
 .site-navigation > li > a {
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: var(--white-opacity);
   color: var(--white);
 }
 
-.site-navigation > li > a {
-  text-decoration: underline;
-  text-decoration-color: var(--white-opacity);
+.menu-current > a {
+  text-decoration: none;
+  background-color: var(--background-current);
+  border-radius: 26px;
 }
 
 .site-navigation a:hover,
 .site-navigation a:focus {
   color: var(--black);
   background-color: var(--white);
+  border-radius: 26px;
+}
+
+.site-navigation a:active {
+  box-shadow: inset 0px 2px 1px var(--bx-shadow-menu);
 }
 
 .dropdown {
   display: block;
   width: 143px;
   background-color: var(--white);
+  box-shadow: 0px 20px 20px var(--bx-shadow-popup);
 }
 
 .submenu > li {
@@ -108,7 +118,7 @@ body {
   color: var(--black);
 }
 
-.submenu > li > a {
+.submenu > li a {
   text-decoration: none;
   font-size: 14px;
   line-height: 16px;
@@ -116,13 +126,18 @@ body {
   color: var(--black);
 }
 
-.submenu > li > a:hover,
-.submenu > li > a:focus {
+.submenu li:hover,
+.submenu li:focus {
   background-color: var(--background-hover);
 }
 
-.submenu > li > a:active {
+.submenu > li:active {
   background-color: var(--background-active);
+}
+
+.current-item {
+  background-color: var(--background-current);
+  color: var(--white);
 }
 
 /* Поиск, вход, корзина */
@@ -134,12 +149,16 @@ body {
   width: 341px;
   height: 84px;
   background: var(--background-popup);
+  box-shadow: 0px 20px 20px var(--bx-shadow-popup);
   border-radius: 4px;
 }
 
 .search-form input {
   width: 311px;
   height: 44px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
   border: 1px solid var(--border-input);
   box-sizing: border-box;
   border-radius: 4px;
@@ -159,16 +178,8 @@ body {
 }
 
 .search-form input::placeholder {
-  font-size: 14px;
   font-weight: 400;
-  line-height: 16px;
-  vertical-align: middle;
   color: var(--input-text);
-}
-
-/* ПОЛЕ С ВВЕДЕННЫМИ ДАННЫМИ */
-.search-form input:valid {
-  font-weight: 700;
 }
 
 /* Кнопки входа и корзины */
@@ -181,6 +192,8 @@ body {
   text-decoration: none;
   color: var(--white);
   background-color: var(--white-opacity);
+  border-radius: 20px;
+  padding: 8px;
 }
 
 .login-link:hover,
@@ -191,6 +204,11 @@ body {
   background-color: var(--white);
 }
 
+.cart-add {
+  background-color: var(--white);
+  color: var(--black);
+}
+
 /* Popup формы входа */
 
 .form-registration {
@@ -198,12 +216,16 @@ body {
   width: 277px;
   height: 214px;
   background: var(--background-popup);
+  box-shadow: 0px 20px 20px var(--bx-shadow-popup);
   border-radius: 4px;
 }
 
 .form-registration input {
   width: 241px;
   height: 44px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
   border: 1px solid var(--border-input);
   box-sizing: border-box;
   border-radius: 4px;
@@ -224,24 +246,11 @@ body {
 }
 
 .form-registration input::placeholder {
-  font-size: 14px;
   font-weight: 400;
-  line-height: 16px;
-  vertical-align: middle;
   color: var(--input-text);
 }
 
-.form-registration input:valid {
-  font-weight: 700;
-}
-
-.form-registration input[type="email"]:focus {
-  font-weight: 700;
-}
-
 .button-link {
-  width: 103px;
-  height: 44px;
   background: var(--red-gradient);
   box-shadow: var(--button-popup-b-shadow);
   border: none;
@@ -252,6 +261,7 @@ body {
   line-height: 16px;
 
   float: left;
+  padding: 14px 25px;
   margin-top: 20px;
   margin-left: 19px;
   margin-right: 20px;
@@ -282,7 +292,49 @@ body {
   text-decoration-color: var(--link-on-white-td);
 }
 
-/* Здесь будет popup корзины */
+/* Popup корзины */
+
+.cart-popup {
+  width: 539px;
+  height: auto;
+  background: var(--background-popup);
+  box-shadow: 0px 20px 20px var(--bx-shadow-popup);
+  border-radius: 4px;
+}
+
+.table-cart {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--black);
+}
+
+.table-cart td:nth-child(3) {
+  color: var(--black-cart);
+}
+
+.table-cart td:nth-child(3) span {
+  color: var(--input-text);
+}
+
+.table-cart tr:nth-child(2) {
+  border: 3px solid #cacac7;
+}
+
+.table-cart tr:last-child {
+  text-align: right;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.button-cart {
+  font-size: 18px;
+  line-height: 16px;
+  border: none;
+  padding: 14px 15px;
+}
+
+/* Режим работы и телефон */
 
 .work-hours {
   font-size: 14px;
@@ -298,8 +350,14 @@ body {
   color: var(--white);
 }
 
+/* Main */
+
 .container {
-  margin: 0 auto;
+}
+
+.container h1 {
+  font-size: 35px;
+  line-height: 41px;
 }
 
 /* Слайдер с мороженым */
@@ -325,15 +383,40 @@ body {
   list-style: none;
 }
 
+/* Breadcrumbs */
+
+.breadcrumbs {
+  list-style: none;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--white);
+  border-bottom: 1px solid var(--white-opacity);
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-image: url(../img/svg/double-arrow.svg);
+  background-repeat: no-repeat;
+}
+
+.breadcrumbs-current a {
+  border-bottom: none;
+}
+
 /* Buttons */
 
 .button {
   text-decoration: none;
-  display: inline-block;
   text-align: center;
-  font-size: 32px;
   font-weight: 700;
-  line-height: 44px;
   letter-spacing: 1px; /*проверить*/
 
   text-shadow: var(--text-shadow-button);
@@ -396,6 +479,68 @@ body {
   line-height: 24px;
 }
 
+/* Параметры выбора в каталоге */
+
+.field-select {
+  border: none;
+}
+
+.field-select legend {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.field-select select {
+  background-color: var(--white-opacity);
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--white);
+  padding: 9px 16px;
+}
+
+.field-select select:hover {
+  color: var(--black);
+}
+
+.fieldset-list {
+  list-style: none;
+  display: flex;
+  background-color: var(--white-opacity);
+  border-radius: 20px;
+  padding: 9px 17px;
+}
+
+.fieldset-list label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.button-select {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--white);
+  background-color: var(--white-opacity);
+  border: 2px solid var(--white);
+  border-radius: 20px;
+  padding: 9px 29px;
+}
+
+.button-select:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.button-select:active {
+  border: none;
+  box-shadow: inset 0 2px 1px var(--bx-shadow-menu);
+}
+
 /* Каталог. Хиты продаж */
 
 .catalog {
@@ -447,6 +592,14 @@ body {
   background-color: var(--white-opacity);
 }
 
+.catalog-item-block {
+  display: none;
+}
+
+.catalog-item:hover .catalog-item-block {
+  display: block;
+}
+
 .button-catalog {
   left: 46px;
   width: 200px;
@@ -469,6 +622,62 @@ body {
   background-color: var(--white);
   background-position: 50% 50%;
   text-align: center;
+}
+
+/* Пагинация в каталоге */
+
+.pagination-list {
+  list-style: none;
+  position: relative;
+}
+
+.pagination-list li:first-child::before {
+  content: "";
+  position: absolute;
+  left: 30px; /* временно */
+  width: 7px;
+  height: 12px;
+  background-image: url(../img/svg/arrow-pagination.svg);
+  opacity: 0.2;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+}
+
+.pagination-list li:last-child::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 12px;
+  background-image: url(../img/svg/arrow-pagination.svg);
+}
+
+.pagination-item a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--white);
+}
+
+.pagination-item a:hover {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--white-opacity);
+  padding: 4px;
+}
+
+.pagination-item a:active {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.pagination-item-current a {
+  /* width: 36px;
+  height: 36px; */
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 /* Информация о магазине */
@@ -505,7 +714,7 @@ body {
   position: absolute;
   width: 49px;
   height: 49px;
-  border: 2px solid #323232; /*root*/
+  border: 2px solid var(--black);
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -593,6 +802,9 @@ body {
 .subscribe-wrap input {
   width: 368px;
   height: 44px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
   border: 1px solid var(--border-input-modal);
   box-sizing: border-box;
   border-radius: 6px;
@@ -612,20 +824,8 @@ body {
 }
 
 .subscribe-wrap input::placeholder {
-  font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
-  vertical-align: middle;
   color: var(--input-text);
-}
-
-/* ПОЛЕ С ВВЕДЕННЫМИ ДАННЫМИ */
-.subscribe-wrap input:valid {
-  font-weight: 700;
-}
-
-.subscribe-wrap input[type="email"]:focus {
-  font-weight: 700;
 }
 
 .button-submit {
@@ -785,8 +985,8 @@ body {
 .modal input,
 .modal textarea {
   font-size: 16px;
-  font-weight: 400;
   line-height: 20px;
+  font-weight: 700;
   border: 1px solid var(--border-input-modal);
   box-sizing: border-box;
   border-radius: 4px;
@@ -816,25 +1016,8 @@ body {
 
 .modal input::placeholder,
 .modal textarea::placeholder {
-  font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
-  vertical-align: middle;
   color: var(--input-text);
-}
-
-/* ПОЛЕ С ВВЕДЕННЫМИ ДАННЫМИ */
-.modal input:valid {
-  font-weight: 700;
-}
-
-.modal input[type="email"]:focus {
-  font-weight: 700;
-}
-
-.modal textarea:focus {
-  font-weight: 700;
-  color: var(--black);
 }
 
 .modal .button-submit {
