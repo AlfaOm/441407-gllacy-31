@@ -45,13 +45,13 @@
 }
 
 .page-body {
-  min-width: 960px;
+  min-width: 1200px;
   margin: 0;
   padding: 0;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
-  font-weight: 400;  /* ??? */
+  font-weight: 400; /* ??? */
   color: var(--white);
   background-color: var(--background-body);
 
@@ -87,9 +87,6 @@
   line-height: 18px;
   font-weight: 700;
   color: var(--white);
-  width: 1144px;
-  margin: 0 auto;
-  padding: 9px 27px;
 }
 
 .site-navigation {
@@ -400,12 +397,16 @@
 /* Main */
 
 .container {
-  width: 1144px;
   margin: 0 auto;
-  padding: 9px 27px;
 }
 
-.container h1 {
+.center {
+  width: 1146px;
+  margin: 0 auto;
+  padding: 0 27px;
+}
+
+.heading-one {
   font-size: 35px;
   line-height: 41px;
 }
@@ -414,7 +415,7 @@
 
 .slider-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -503,19 +504,17 @@
 
 .bonus-content-1 {
   /* background-color: ; */
-  background-image: url(../img/background/raspberry.jpg);
+  background-image: url("../img/background/raspberry.jpg");
   background-repeat: no-repeat;
-  width: 560px;
   height: 229px;
   border-radius: 16px;
-   /* padding: 16px; */ /*из-за отступов скругления пропадают*/
+  /* padding: 16px; */ /*из-за отступов скругления пропадают*/
 }
 
 .bonus-content-2 {
   /* background-color: ; */
-  background-image: url(../img/background/chocolate.jpg);
+  background-image: url("../img/background/chocolate.jpg");
   background-repeat: no-repeat;
-  width: 560px;
   height: 229px;
   border-radius: 16px;
   /* padding: 16px; */
@@ -611,7 +610,7 @@
 
 .catalog-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 26px;
   list-style: none;
   margin: 0;
@@ -662,9 +661,9 @@
   border-radius: 4px;
 } */
 
-/* .catalog-item-block {
+.catalog-item-block {
   display: none;
-} */
+}
 
 /* .catalog-item:hover .catalog-item-block {
   display: block;
@@ -818,6 +817,7 @@
 .new-blog {
   width: 560px;
   height: 220px;
+  background-color: var(--white);
   background-image: url(../img/background/srawberries.jpg);
   background-repeat: no-repeat;
   border-radius: 16px;
@@ -937,8 +937,8 @@
 
 .address-wrap {
   position: absolute;
-  top: 42px;
-  right: 0px;
+  top: 62px;
+  right: 27px;
 }
 
 .contacts-address {
@@ -978,9 +978,10 @@
 
 /* Footer */
 
-.main-footer .container {
+.main-footer-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 26px;
 }
 
 /* Социальные кнопки */
