@@ -44,16 +44,25 @@
   --text-subscribe: #5a5a5a;
 }
 
-body {
-  min-width: 960px;
+.page-body {
+  min-width: 1200px;
   margin: 0;
   padding: 0;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
-  font-weight: 400;
+  font-weight: 400; /* ??? */
   color: var(--white);
   background-color: var(--background-body);
+
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
+.page {
+  height: 100%;
 }
 
 .visually-hidden {
@@ -69,11 +78,20 @@ body {
   overflow: hidden;
 }
 
+/* Header */
+
 .main-navigation {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
   font-size: 16px;
   line-height: 18px;
   font-weight: 700;
   color: var(--white);
+}
+
+.site-navigation {
+  margin: 0;
+  padding: 0;
 }
 
 .site-navigation,
@@ -105,11 +123,15 @@ body {
 }
 
 .dropdown {
-  display: block;
+  display: none;
   width: 143px;
   background-color: var(--white);
   box-shadow: 0px 20px 20px var(--bx-shadow-popup);
 }
+
+/* .menu-item:hover .dropdown {
+  display: block;
+} */
 
 .submenu > li {
   font-size: 14px;
@@ -142,10 +164,21 @@ body {
 
 /* Поиск, вход, корзина */
 
+/* .user-navigation {
+
+} */
+
 /* Форма поиска */
 
-.search-form {
+/* .search-block:hover .search-form {
   display: block;
+} */
+
+.search-form {
+  display: none;
+}
+
+.search-form {
   width: 341px;
   height: 84px;
   background: var(--background-popup);
@@ -184,6 +217,14 @@ body {
 
 /* Кнопки входа и корзины */
 
+/* .user-link:hover .form-registration {
+  display: block;
+} */
+
+.form-registration {
+  display: none;
+}
+
 .login-link,
 .main-cart {
   font-size: 14px;
@@ -212,7 +253,6 @@ body {
 /* Popup формы входа */
 
 .form-registration {
-  display: block;
   width: 277px;
   height: 214px;
   background: var(--background-popup);
@@ -336,6 +376,10 @@ body {
 
 /* Режим работы и телефон */
 
+/* .work-hours-phone {
+  width: 170px;
+} */
+
 .work-hours {
   font-size: 14px;
   line-height: 16px;
@@ -353,33 +397,46 @@ body {
 /* Main */
 
 .container {
+  width: 1146px;
+  padding: 0 27px;
+  margin: 0 auto;
 }
 
-.container h1 {
+/* .center {
+  width: 1146px;
+  margin: 0 auto;
+  padding: 0 27px;
+} */
+
+.heading-one {
   font-size: 35px;
   line-height: 41px;
 }
 
 /* Слайдер с мороженым */
 
-.slider h3 {
-  font-size: 60px;
-  line-height: 60px;
-  font-weight: 700;
-  width: 672px;
+.slider-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+.slider-item {
   text-align: center;
 }
 
-.slider-list {
-  list-style: none;
-}
-
-/* расхождение размера с макетом ??? */
-.slider-list img {
-  transform: scale(0.89);
+.slider-item h3 {
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 700;
 }
 
 .slider-control {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -415,6 +472,7 @@ body {
 
 .button {
   text-decoration: none;
+  display: inline-block;
   text-align: center;
   font-weight: 700;
   letter-spacing: 1px; /*проверить*/
@@ -441,27 +499,31 @@ body {
 /* Секция с бонусами */
 
 .preview-bonus {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 26px;
 }
 
 .bonus-content-1 {
-  background-image: url(../img/background/raspberry.jpg);
+  /* background-color: ; */
+  background-image: url("../img/background/raspberry.jpg");
   background-repeat: no-repeat;
-  width: 560px;
   height: 229px;
   border-radius: 16px;
+  /* padding: 16px; */ /*из-за отступов скругления пропадают*/
 }
 
 .bonus-content-2 {
-  background-image: url(../img/background/chocolate.jpg);
+  /* background-color: ; */
+  background-image: url("../img/background/chocolate.jpg");
   background-repeat: no-repeat;
-  width: 560px;
   height: 229px;
   border-radius: 16px;
+  /* padding: 16px; */
 }
 
 .bonus-header {
+  margin: 0;
   font-size: 35px;
   line-height: 41px;
   font-weight: 700;
@@ -534,6 +596,7 @@ body {
 .button-select:hover {
   background-color: var(--white);
   color: var(--black);
+  cursor: pointer;
 }
 
 .button-select:active {
@@ -548,11 +611,16 @@ body {
 }
 
 .catalog-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 26px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .catalog-item {
-  display: inline-block; /*временно*/
+  /* display: inline-block; временно */
   position: relative;
   width: 267px;
   height: 324px;
@@ -572,6 +640,8 @@ body {
 }
 
 .catalog-price {
+  position: absolute;
+  top: 216px;
   font-size: 45px;
   font-weight: 700;
   line-height: 45px;
@@ -582,7 +652,7 @@ body {
   line-height: 35px;
 }
 
-.catalog-item-block::after {
+/* .catalog-item-block::after {
   content: "";
   position: absolute;
   top: 0px;
@@ -590,22 +660,23 @@ body {
   width: 293px;
   height: 402px;
   background-color: var(--white-opacity);
-}
+  border-radius: 4px;
+} */
 
 .catalog-item-block {
   display: none;
 }
 
-.catalog-item:hover .catalog-item-block {
+/* .catalog-item:hover .catalog-item-block {
   display: block;
-}
+} */
 
 .button-catalog {
   left: 46px;
   width: 200px;
   height: 44px;
   font-size: 18px;
-  line-height: 30px; /* в макете 24*/
+  line-height: 24px;
   text-align: center;
   padding: 12px 16px 0px 16px;
 }
@@ -621,7 +692,6 @@ body {
   background-repeat: no-repeat;
   background-color: var(--white);
   background-position: 50% 50%;
-  text-align: center;
 }
 
 /* Пагинация в каталоге */
@@ -683,10 +753,12 @@ body {
 /* Информация о магазине */
 
 .about {
+  display: grid;
   width: 1146px;
   height: auto;
   background-image: url(../img/pattern-waffle.jpg);
   border-radius: 16px;
+  margin-bottom: 45px;
 }
 
 .about h2 {
@@ -738,9 +810,17 @@ body {
 
 /* Новости в блоге */
 
+.news-subscribe-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 26px;
+  margin-bottom: 45px;
+}
+
 .new-blog {
   width: 560px;
   height: 220px;
+  background-color: var(--white);
   background-image: url(../img/background/srawberries.jpg);
   background-repeat: no-repeat;
   border-radius: 16px;
@@ -797,6 +877,7 @@ body {
   font-weight: 400;
   line-height: 22px;
   color: var(--text-subscribe);
+  margin: 0;
 }
 
 .subscribe-wrap input {
@@ -839,7 +920,13 @@ body {
 /* Карта и адрес магазина */
 
 .contacts {
+  display: grid;
+  grid-template-columns: auto;
   position: relative;
+}
+
+.address-map {
+  text-align: center;
 }
 
 .address-map::before {
@@ -851,6 +938,12 @@ body {
   left: 316px;
   background-image: url(../img/svg/map-marker.svg);
   background-repeat: no-repeat;
+}
+
+.address-wrap {
+  position: absolute;
+  top: 62px;
+  right: 27px;
 }
 
 .contacts-address {
@@ -890,12 +983,23 @@ body {
 
 /* Footer */
 
+.main-footer-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 26px;
+}
+
 /* Социальные кнопки */
 
+.footer-socials {
+  text-align: center;
+  justify-self: start;
+}
+
 .footer-socials-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  display: flex;
-  flex-direction: row;
 }
 
 .social-button:hover path,
@@ -908,6 +1012,10 @@ body {
 }
 
 /* Блок с дополнительной информацией */
+
+.footer-additional-info {
+  justify-self: center;
+}
 
 .additional-info {
   list-style: none;
@@ -944,6 +1052,10 @@ body {
 }
 
 /* Сделано в академии */
+
+.footer-copyright {
+  justify-self: end;
+}
 
 .footer-copyright p:last-child {
   font-size: 12px;
