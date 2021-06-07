@@ -397,14 +397,16 @@
 /* Main */
 
 .container {
+  width: 1146px;
+  padding: 0 27px;
   margin: 0 auto;
 }
 
-.center {
+/* .center {
   width: 1146px;
   margin: 0 auto;
   padding: 0 27px;
-}
+} */
 
 .heading-one {
   font-size: 35px;
@@ -751,6 +753,7 @@
 /* Информация о магазине */
 
 .about {
+  display: grid;
   width: 1146px;
   height: auto;
   background-image: url(../img/pattern-waffle.jpg);
@@ -917,6 +920,7 @@
 /* Карта и адрес магазина */
 
 .contacts {
+  display: grid;
   position: relative;
 }
 
