@@ -334,7 +334,8 @@
 
 /* Popup корзины */
 
-.cart-popup {
+.cart-form {
+  display: none;
   width: 539px;
   height: auto;
   background: var(--background-popup);
@@ -408,11 +409,6 @@
   padding: 0 27px;
 } */
 
-.heading-one {
-  font-size: 35px;
-  line-height: 41px;
-}
-
 /* Слайдер с мороженым */
 
 .slider-list {
@@ -440,10 +436,35 @@
   list-style: none;
 }
 
+.page-catalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+}
+
+.page-catalog .breadcrumbs {
+  grid-column: 1 / -1;
+  margin-bottom: 9px;
+}
+
+.page-catalog .page-title {
+  grid-column: 1 / -1;
+}
+
+.page-title {
+  margin: 0;
+  margin-bottom: 29px;
+  padding: 0;
+  font-size: 35px;
+  line-height: 41px;
+}
+
 /* Breadcrumbs */
 
 .breadcrumbs {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .breadcrumbs a {
@@ -543,14 +564,34 @@
 
 /* Параметры выбора в каталоге */
 
+.parameter-select {
+  margin-bottom: 40px;
+}
+
 .field-select {
   border: none;
+  margin: 0;
+  margin-bottom: 14px;
+  padding: 0;
 }
+
+/* .field-select:nth-child(3) .fieldset-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.field-select:nth-child(4) .fieldset-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 711px;
+} */
 
 .field-select legend {
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
+  margin-bottom: 7px;
+  margin-left: 16px;
 }
 
 .field-select select {
@@ -564,13 +605,15 @@
   padding: 9px 16px;
 }
 
-.field-select select:hover {
+.field-select select:hover,
+.field-select select:focus {
   color: var(--black);
 }
 
 .fieldset-list {
   list-style: none;
-  display: flex;
+  margin: 0;
+  padding: 0;
   background-color: var(--white-opacity);
   border-radius: 20px;
   padding: 9px 17px;
@@ -616,6 +659,7 @@
   column-gap: 26px;
   list-style: none;
   margin: 0;
+  margin-bottom: 80px;
   padding: 0;
 }
 
@@ -637,6 +681,8 @@
 
 .catalog-img img {
   border-radius: 50%;
+  width: 267px;
+  height: 267px;
 }
 
 .catalog-price {
@@ -697,14 +743,23 @@
 /* Пагинация в каталоге */
 
 .pagination-list {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
   list-style: none;
+  margin: 0;
+  margin-right: 26px;
+  padding: 0;
+}
+
+.pagination-item {
   position: relative;
 }
 
-.pagination-list li:first-child::before {
+.pagination-item:first-child::before {
   content: "";
   position: absolute;
-  left: 30px; /* временно */
+  right: 24px;
   width: 7px;
   height: 12px;
   background-image: url(../img/svg/arrow-pagination.svg);
@@ -713,9 +768,10 @@
   transform: rotate(180deg);
 }
 
-.pagination-list li:last-child::after {
+.pagination-item:last-child::after {
   content: "";
   position: absolute;
+  left: 26px;
   width: 7px;
   height: 12px;
   background-image: url(../img/svg/arrow-pagination.svg);
@@ -727,14 +783,14 @@
   font-weight: 500;
   line-height: 18px;
   color: var(--white);
+  /* padding: 4px; */
 }
 
 .pagination-item a:hover {
-  width: 36px;
-  height: 36px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background-color: var(--white-opacity);
-  padding: 4px;
 }
 
 .pagination-item a:active {
@@ -743,8 +799,6 @@
 }
 
 .pagination-item-current a {
-  /* width: 36px;
-  height: 36px; */
   border-radius: 50%;
   background-color: var(--white);
   color: var(--black);
@@ -766,12 +820,19 @@
   font-weight: 500;
   line-height: 30px;
   color: var(--black);
+  margin-top: 24px;
+  margin-left: 20px;
+  margin-bottom: 21px;
 }
 
 .about-list {
   list-style: none;
   font-size: 16px;
   line-height: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding: 0;
 }
 
 .about-list-item {
@@ -779,6 +840,9 @@
   font-weight: 400;
   line-height: 22px;
   color: var(--black);
+  margin-left: 75px;
+  margin-bottom: 33px;
+  width: 482px;
 }
 
 .about-list-item::before {
