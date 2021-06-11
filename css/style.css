@@ -26,6 +26,9 @@
   --background-popup: #f8f7f4;
   --bx-shadow-popup: rgba(0, 0, 0, 0.4);
   --bx-shadow-menu: #696969;
+  --bg-bonus-red: #880000;
+  --bg-bonus-choco: #35180b;
+  --bg-waffle: #ebdcbd;
   --background-hover: #fbded7;
   --background-active: #f6b5a5;
   --background-current: #d07058;
@@ -80,6 +83,10 @@
 
 /* Header */
 
+.main-header {
+  padding-top: 9px;
+}
+
 .main-navigation {
   display: grid;
   grid-template-columns: min-content 1fr min-content;
@@ -89,9 +96,17 @@
   color: var(--white);
 }
 
+.main-header-logo {
+  margin-right: 24px;
+  /* padding-top: 9px; */
+}
+
 .site-navigation {
+  display: flex;
+  gap: 32px;
   margin: 0;
   padding: 0;
+  padding-top: 21px;
 }
 
 .site-navigation,
@@ -164,9 +179,19 @@
 
 /* Поиск, вход, корзина */
 
-/* .user-navigation {
+.user-navigation {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding-top: 18px;
+}
 
-} */
+.user-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
 
 /* Форма поиска */
 
@@ -377,14 +402,17 @@
 
 /* Режим работы и телефон */
 
-/* .work-hours-phone {
+.work-hours-phone {
   width: 170px;
-} */
+  text-align: right;
+}
 
 .work-hours {
   font-size: 14px;
   line-height: 16px;
   font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
 .work-phone {
@@ -402,12 +430,6 @@
   padding: 0 27px;
   margin: 0 auto;
 }
-
-/* .center {
-  width: 1146px;
-  margin: 0 auto;
-  padding: 0 27px;
-} */
 
 /* Слайдер с мороженым */
 
@@ -523,28 +545,37 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 26px;
+  height: 229px;
+  margin-bottom: 40px;
 }
 
 .bonus-content-1 {
-  /* background-color: ; */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-bonus-red);
   background-image: url("../img/background/raspberry.jpg");
   background-repeat: no-repeat;
-  height: 229px;
   border-radius: 16px;
-  /* padding: 16px; */ /*из-за отступов скругления пропадают*/
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 22px; /*из-за отступов скругления пропадают*/
 }
 
 .bonus-content-2 {
-  /* background-color: ; */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-bonus-choco);
   background-image: url("../img/background/chocolate.jpg");
   background-repeat: no-repeat;
-  height: 229px;
   border-radius: 16px;
-  /* padding: 16px; */
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 22px;
 }
 
 .bonus-header {
   margin: 0;
+  margin-bottom: 16px;
   font-size: 35px;
   line-height: 41px;
   font-weight: 700;
@@ -554,12 +585,17 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 22px;
+  margin: 0;
 }
 
 .button-bonus {
+  align-self: flex-end;
+  position: relative;
+  top: 42px;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
+  padding: 12px 22px;
 }
 
 /* Параметры выбора в каталоге */
@@ -698,7 +734,7 @@
   line-height: 35px;
 }
 
-/* .catalog-item-block::after {
+.catalog-item-block::after {
   content: "";
   position: absolute;
   top: 0px;
@@ -707,7 +743,7 @@
   height: 402px;
   background-color: var(--white-opacity);
   border-radius: 4px;
-} */
+}
 
 .catalog-item-block {
   display: none;
@@ -808,10 +844,11 @@
 
 .about {
   display: grid;
-  width: 1146px;
-  height: auto;
+  background-color: var(--bg-waffle);
   background-image: url(../img/pattern-waffle.jpg);
   border-radius: 16px;
+  padding-top: 24px;
+  padding-left: 20px;
   margin-bottom: 45px;
 }
 
@@ -820,8 +857,7 @@
   font-weight: 500;
   line-height: 30px;
   color: var(--black);
-  margin-top: 24px;
-  margin-left: 20px;
+  margin-top: 0px;
   margin-bottom: 21px;
 }
 
@@ -840,7 +876,7 @@
   font-weight: 400;
   line-height: 22px;
   color: var(--black);
-  margin-left: 75px;
+  /* margin-left: 75px; */
   margin-bottom: 33px;
   width: 482px;
 }
@@ -895,6 +931,9 @@
   font-weight: 500;
   line-height: 22px;
   color: var(--black);
+  margin-top: 23px;
+  margin-left: 20px;
+  margin-bottom: 0;
 }
 
 .blog-link {
@@ -905,6 +944,7 @@
   line-height: 30px;
   color: var(--black);
   width: 287px;
+  margin-left: 20px;
 }
 
 .blog-link:hover,
@@ -941,7 +981,10 @@
   font-weight: 400;
   line-height: 22px;
   color: var(--text-subscribe);
+  padding-top: 29px;
+  padding-left: 20px;
   margin: 0;
+  margin-bottom: 47px;
 }
 
 .subscribe-wrap input {
@@ -987,6 +1030,7 @@
   display: grid;
   grid-template-columns: auto;
   position: relative;
+  margin-bottom: 18px;
 }
 
 .address-map {
@@ -1020,6 +1064,10 @@
   line-height: 20px;
   color: var(--black);
 }
+.address-block {
+  padding-top: 32px;
+  padding-left: 25px;
+}
 
 .contacts-address span,
 .contacts-address .contacts-phone {
@@ -1031,18 +1079,14 @@
 }
 
 .contacts-address p {
-  margin-bottom: 0px;
-}
-
-.contacts-address p:last-child {
-  margin-top: 0;
+  margin: 0;
 }
 
 .button-feedback {
-  width: 253px;
-  height: 43px;
   font-size: 18px;
   line-height: 24px;
+  padding: 9px 28px;
+  margin-top: 31px;
 }
 
 /* Footer */
@@ -1058,9 +1102,12 @@
 .footer-socials {
   text-align: center;
   justify-self: start;
+  padding-top: 18px;
 }
 
 .footer-socials-list {
+  display: flex;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1082,6 +1129,8 @@
 }
 
 .additional-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   list-style: none;
   position: relative;
 }
@@ -1121,10 +1170,15 @@
   justify-self: end;
 }
 
+.footer-copyright p {
+  margin: 0;
+}
+
 .footer-copyright p:last-child {
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
+  padding-top: 8px;
 }
 
 .copyright-link {
