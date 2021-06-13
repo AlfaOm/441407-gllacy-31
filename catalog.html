@@ -43,41 +43,43 @@
       <!-- User navigation -->
 
       <div class="user-navigation">
+        <div class="user-wrap">
 
-        <!-- Форма поиска -->
+          <!-- Форма поиска -->
 
-        <div class="search-block">
-          <button class="search" type="button">Поиск</button>
-          <form class="search-form" action="https://echo.htmlacademy.ru/" method="get">
-            <input type="search" name="search" placeholder="Крем-брюле">
-            <!-- <button class="submit-search" type="submit">Enter</button> -->
-          </form>
-        </div>
+          <div class="search-block">
+            <button class="search" type="button">Поиск</button>
+            <form class="search-form" action="https://echo.htmlacademy.ru/" method="get">
+              <input type="search" name="search" placeholder="Крем-брюле">
+            </form>
+          </div>
 
-        <!-- Форма входа -->
+          <!-- Форма входа -->
 
-        <div class="user-link">
-          <a class="login-link" href="#">Вход</a>
-          <form class="form-registration" action="https://echo.htmlacademy.ru/" method="post">
+          <div class="user-link">
+            <a class="login-link" href="#">Вход</a>
+            <form class="form-registration" action="https://echo.htmlacademy.ru/" method="post">
 
-            <input type="email" name="email" placeholder="email@example.com">
+              <input type="email" name="email" placeholder="email@example.com">
 
-            <input type="password" name="password" placeholder="......">
+              <input type="password" name="password" placeholder="......">
 
-            <button class="button-link" type="submit">Войти</button>
-            <p class="help-restore">
-              <a class="login-help restore" href="#">Забыли пароль?</a>
-            </p>
-            <p class="help-registration">
-              <a class="login-help new-registration" href="#">Новая регистрация</a>
-            </p>
-          </form>
-        </div>
+              <button class="button-link" type="submit">Войти</button>
+              <p class="help-restore">
+                <a class="login-help restore" href="#">Забыли пароль?</a>
+              </p>
+              <p class="help-registration">
+                <a class="login-help new-registration" href="#">Новая регистрация</a>
+              </p>
+            </form>
+          </div>
 
-        <!-- Корзина -->
 
-        <div class="cart">
-          <a class="main-cart cart-add" href="#">2 товара</a>
+          <!-- Корзина -->
+
+          <div class="cart">
+            <a class="main-cart cart-add" href="#">2 товара</a>
+          </div>
         </div>
         <section class="popup cart-popup">
           <form class="cart-form" action="https://echo.htmlacademy.ru/" method="get">
@@ -126,10 +128,10 @@
 
       <h1 class="page-title">Сливочное мороженое</h1>
 
-      <section class="parameter-select">
+      <section class="filters">
         <h2 class="visually-hidden">Параметры выбора</h2>
-        <form class="form-parameters" action="https://echo.htmlacademy.ru" method="get">
-          <fieldset class="field-select">
+        <form class="filter" action="https://echo.htmlacademy.ru" method="get">
+          <fieldset>
             <legend>Сортировка:</legend>
             <select name="#" id="#">
               <option value="popular">по популярности</option>
@@ -138,60 +140,60 @@
               <option value="fat-content">по жирности</option>
             </select>
           </fieldset>
-          <fieldset class="field-select">
+          <fieldset>
             <legend>Цена: 100 ₽ – 500 ₽</legend>
             <div>
               <input type='range' min='100' value='120' max='250' />
               <input type='range' min='250' value='400' max='500' />
             </div>
           </fieldset>
-          <fieldset class="field-select">
+          <fieldset>
             <legend>Жирность:</legend>
-            <ul class="fieldset-list">
-              <li>
-                <input type="radio" id="filter-to-0%" name="fat-content" value="0%">
+            <ul>
+              <li class="filter-option filter-radio">
+                <input class="%visually-hidden filter-input-radio filter-input" type="radio" id="filter-to-0%" name="fat-content" value="0%">
                 <label for="filter-to-0%">0%</label>
               </li>
-              <li>
-                <input type="radio" id="filter-to-10%" name="fat-content" value="up-to-10%" checked>
+              <li class="filter-option filter-radio">
+                <input class="%visually-hidden filter-input-radio filter-input" type="radio" id="filter-to-10%" name="fat-content" value="up-to-10%" checked>
                 <label for="filter-to-10%">до 10%</label>
               </li>
-              <li>
-                <input type="radio" id="filter-to-30%" name="fat-content" value="up-to-30%">
+              <li class="filter-option filter-radio">
+                <input class="%visually-hidden filter-input-radio filter-input" type="radio" id="filter-to-30%" name="fat-content" value="up-to-30%">
                 <label for="filter-to-30%">до 30%</label>
               </li>
-              <li>
-                <input type="radio" id="filter-above-30%" name="fat-content" value="above-30%">
+              <li class="filter-option filter-radio">
+                <input class="%visually-hidden filter-input-radio filter-input" type="radio" id="filter-above-30%" name="fat-content" value="above-30%">
                 <label for="filter-above-30%">выше 30%</label>
               </li>
             </ul>
           </fieldset>
-          <fieldset class="field-select">
+          <fieldset>
             <legend>Наполнители:</legend>
-            <ul class="fieldset-list">
-              <li>
-                <input type="checkbox" name="chocolate" id="filter-chocolate" checked>
+            <ul>
+              <li class="filter-option filter-checkbox">
+                <input class="%visually-hidden filter-input-checkbox filter-input" type="checkbox" name="chocolate" id="filter-chocolate" checked>
                 <label for="filter-chocolate">шоколадные</label>
               </li>
-              <li>
-                <input type="checkbox" name="powdered-sugar" id="filter-powdered-sugar" checked>
+              <li class="filter-option filter-checkbox">
+                <input class="%visually-hidden filter-input-checkbox filter-input" type="checkbox" name="powdered-sugar" id="filter-powdered-sugar" checked>
                 <label for="filter-powdered-sugar">сахарные присыпки</label>
               </li>
-              <li>
-                <input type="checkbox" name="fruit" id="filter-fruit">
+              <li class="filter-option filter-checkbox">
+                <input class="%visually-hidden filter-input-checkbox filter-input" type="checkbox" name="fruit" id="filter-fruit">
                 <label for="filter-fruit">фрукты</label>
               </li>
-              <li>
-                <input type="checkbox" name="syrup" id="filter-syrup">
+              <li class="filter-option filter-checkbox">
+                <input class="%visually-hidden filter-input-checkbox filter-input" type="checkbox" name="syrup" id="filter-syrup">
                 <label for="filter-syrup">сиропы</label>
               </li>
-              <li>
-                <input type="checkbox" name="jam" id="filter-jam">
+              <li class="filter-option filter-checkbox">
+                <input class="%visually-hidden filter-input-checkbox filter-input" type="checkbox" name="jam" id="filter-jam">
                 <label for="filter-jam">джемы</label>
               </li>
             </ul>
           </fieldset>
-          <button class="button-select" type="submit">Применить</button>
+          <button class="filter-button" type="submit">Применить</button>
         </form>
       </section>
 

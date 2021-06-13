@@ -89,7 +89,7 @@
 
 .main-navigation {
   display: grid;
-  grid-template-columns: min-content 1fr min-content;
+  grid-template-columns: min-content 1fr auto;
   font-size: 16px;
   line-height: 18px;
   font-weight: 700;
@@ -484,6 +484,8 @@
 /* Breadcrumbs */
 
 .breadcrumbs {
+  display: flex;
+  gap: 22px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -518,7 +520,6 @@
   display: inline-block;
   text-align: center;
   font-weight: 700;
-  letter-spacing: 1px; /*проверить*/
 
   text-shadow: var(--text-shadow-button);
 
@@ -600,29 +601,25 @@
 
 /* Параметры выбора в каталоге */
 
-.parameter-select {
+.filters {
   margin-bottom: 40px;
 }
 
-.field-select {
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.filter fieldset {
   border: none;
   margin: 0;
-  margin-bottom: 14px;
   padding: 0;
+  margin-bottom: 14px;
 }
 
-/* .field-select:nth-child(3) .fieldset-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.field-select:nth-child(4) .fieldset-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  width: 711px;
-} */
-
-.field-select legend {
+.filter legend {
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
@@ -630,7 +627,7 @@
   margin-left: 16px;
 }
 
-.field-select select {
+.filter select {
   background-color: var(--white-opacity);
   border-radius: 20px;
   border: none;
@@ -641,12 +638,13 @@
   padding: 9px 16px;
 }
 
-.field-select select:hover,
-.field-select select:focus {
+.filter select:hover,
+.filter select:focus {
   color: var(--black);
 }
 
-.fieldset-list {
+.filter ul {
+  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -655,13 +653,13 @@
   padding: 9px 17px;
 }
 
-.fieldset-list label {
+.filter-option label {
   font-size: 16px;
   font-weight: 500;
   line-height: 18px;
 }
 
-.button-select {
+.filter-button {
   font-size: 16px;
   font-weight: 500;
   line-height: 18px;
@@ -669,16 +667,18 @@
   background-color: var(--white-opacity);
   border: 2px solid var(--white);
   border-radius: 20px;
+  margin-top: 9px;
   padding: 9px 29px;
+  box-sizing: border-box;
 }
 
-.button-select:hover {
+.filter-button:hover {
   background-color: var(--white);
   color: var(--black);
   cursor: pointer;
 }
 
-.button-select:active {
+.filter-button:active {
   border: none;
   box-shadow: inset 0 2px 1px var(--bx-shadow-menu);
 }
@@ -686,7 +686,7 @@
 /* Каталог. Хиты продаж */
 
 .catalog {
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 .catalog-list {
@@ -695,27 +695,38 @@
   column-gap: 26px;
   list-style: none;
   margin: 0;
-  margin-bottom: 80px;
+  /* margin-bottom: 40px; */
   padding: 0;
 }
 
 .catalog-item {
+  display: flex;
+  flex-direction: column;
   /* display: inline-block; временно */
   position: relative;
   width: 267px;
   height: 324px;
+  margin-bottom: 36px;
 }
 
-.catalog-list h3 {
+.catalog-item h3 {
+  order: 1;
   font-size: 16px;
   font-weight: 500;
   line-height: 22px;
+  margin: 0;
   text-align: center;
   text-decoration: underline;
   text-decoration-color: var(--white-opacity);
 }
 
+.catalog-img {
+  margin: 0;
+  margin-bottom: 12px;
+}
+
 .catalog-img img {
+  display: block;
   border-radius: 50%;
   width: 267px;
   height: 267px;
@@ -723,7 +734,8 @@
 
 .catalog-price {
   position: absolute;
-  top: 216px;
+  top: 209px;
+  margin: 0;
   font-size: 45px;
   font-weight: 700;
   line-height: 45px;
@@ -768,7 +780,6 @@
   position: absolute;
   width: 61px;
   height: 61px;
-  top: 25%;
   border-radius: 50%;
   background-image: url(../img/svg/hit.svg);
   background-repeat: no-repeat;
@@ -785,7 +796,9 @@
   list-style: none;
   margin: 0;
   margin-right: 26px;
+  margin-bottom: 48px;
   padding: 0;
+  padding-top: 40px;
 }
 
 .pagination-item {
@@ -959,24 +972,23 @@
 /* Подписка */
 
 .subscribe {
+  padding: 5px 6px;
   position: relative;
   z-index: 1;
   width: 560px;
   height: 220px;
   background-image: url(../img/background/background-post.png);
   background-repeat: no-repeat;
+  box-sizing: border-box;
 }
 
 .subscribe-wrap {
   content: "";
-  position: relative;
-  top: 5px;
-  left: 6px;
   z-index: 2;
   border-radius: 16px;
   background: var(--background-subscribe);
   width: 548px;
-  height: 210px;
+  height: 100%;
 }
 
 .subscribe-text {
@@ -984,10 +996,11 @@
   font-weight: 400;
   line-height: 22px;
   color: var(--text-subscribe);
-  padding-top: 29px;
+  padding-top: 25px;
   padding-left: 20px;
+  padding-right: 16px;
   margin: 0;
-  margin-bottom: 47px;
+  margin-bottom: 40px;
 }
 
 .subscribe-wrap input {
@@ -999,10 +1012,10 @@
   border: 1px solid var(--border-input-modal);
   box-sizing: border-box;
   border-radius: 6px;
-  padding-left: 15px;
+  padding-left: 14px;
   padding-right: 0;
   margin-left: 20px;
-  margin-right: 10px;
+  margin-right: 7px;
   outline: none;
 }
 
@@ -1022,8 +1035,7 @@
 .button-submit {
   font-size: 18px;
   line-height: 24px;
-  width: 130px;
-  height: 44px;
+  padding: 10px 19px;
   border: none;
 }
 
@@ -1050,7 +1062,7 @@
   object-fit: cover;
 }
 
-.address-map::before {
+/* .address-map::before {
   content: "";
   width: 80px;
   height: 140px;
@@ -1059,7 +1071,7 @@
   left: 525px;
   background-image: url(../img/svg/map-marker.svg);
   background-repeat: no-repeat;
-}
+} */
 
 .address-wrap {
   display: flex;
@@ -1110,6 +1122,10 @@
 }
 
 /* Footer */
+
+.main-footer {
+  margin-bottom: 25px;
+}
 
 .main-footer-wrapper {
   display: grid;
