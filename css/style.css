@@ -103,15 +103,17 @@
 }
 
 .main-header-logo {
-  margin-right: 24px;
+  margin-right: 11px;
 }
 
 .site-navigation {
   display: flex;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 7px;
   margin: 0;
   padding: 0;
-  padding-top: 21px;
+  /* padding-top: 21px; */
+  padding-top: 14px;
 }
 
 .site-navigation,
@@ -123,10 +125,13 @@
   position: relative;
 }
 
-.menu-items > a {
-  text-decoration: none;
-  border-bottom: 1px solid var(--white-opacity);
+.menu-items > a {;
+  display: block;
+  text-decoration: underline;
+  text-decoration-color: var(--white-opacity);
+  /* border-bottom: 1px solid var(--white-opacity); */
   color: var(--white);
+  padding: 7px 13px 0px 13px;
 }
 
 .menu-current > a {
@@ -141,8 +146,6 @@
   background-color: var(--white);
   border-radius: 26px;
   padding: 7px 13px;
-  margin-left: -13px;
-  margin-right: -13px;
 }
 
 .menu-items > a:active {
@@ -152,8 +155,8 @@
 .dropdown {
   position: absolute;
   display: none;
-  left: -20px;
-  top: 30px;
+  left: -7px;
+  top: 36px;
   width: 143px;
   height: 171px;
   z-index: 5;
@@ -168,7 +171,7 @@
 }
 
 .menu-items ul {
-  padding: 0;
+  padding: 0; /*переделать в дропдаун*/
 }
 
 .submenu li {
@@ -182,7 +185,7 @@
   position: relative;
   padding-top: 4px;
   padding-left: 21px;
-  padding-bottom: 11px;
+  padding-bottom: 10px;
   margin: 0;
 }
 
@@ -266,7 +269,7 @@
 }
 
 .search-block:hover .search-form,
-.search-block:focus .search-form {
+.search-block:focus-within .search-form {
   display: block;
 }
 
@@ -330,7 +333,8 @@
   position: relative;
 }
 
-.user-link:hover .form-registration {
+.user-link:hover .form-registration,
+.user-link:focus-within .form-registration {
   display: block;
 }
 
@@ -568,38 +572,39 @@
 
 .site-wrapper-1 {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   background-color: var(--bg-site-1);
-  background-image: url("../img/slider-item-1.png");
+  /* background-image: url("../img/slider-item-1.png"); */
 }
 
-.site-wrapper-1::before {
+.site-wrapper-1::after {
   content: "";
   position: absolute;
-  top: 150px;
+  top: 0px;
   left: 50%;
   transform: translate(-50%);
-  z-index: -1;
+  z-index: -2;
   width: 716px;
   height: 716px;
   background: var(--bg-blur-1);
   filter: blur(250px);
 }
 
+
 .site-wrapper-2 {
   position: relative;
   z-index: 1;
   background-color: var(--bg-site-2);
-  background-image: url("../img/slider-item-2.png");
+  /* background-image: url("../img/slider-item-2.png"); */
 }
 
 .site-wrapper-2::before {
   content: "";
   position: absolute;
-  top: 150px;
+  top: 0px;
   left: 50%;
   transform: translate(-50%);
-  z-index: -1;
+  z-index: -2;
   width: 716px;
   height: 716px;
   background: var(--bg-blur-2);
@@ -610,16 +615,16 @@
   position: relative;
   z-index: 1;
   background-color: var(--bg-site-3);
-  background-image: url("../img/slider-item-3.png");
+  /* background-image: url("../img/slider-item-3.png"); */
 }
 
 .site-wrapper-3::before {
   content: "";
   position: absolute;
-  top: 150px;
+  top: 0px;
   left: 50%;
   transform: translate(-50%);
-  z-index: -1;
+  z-index: -2;
   width: 716px;
   height: 716px;
   background: var(--bg-blur-3);
@@ -654,6 +659,14 @@
   line-height: 60px;
   font-weight: 700;
   width: 700px;
+}
+
+ .slider-item img {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -1;
 }
 
 .slide-button {
@@ -944,7 +957,7 @@
   flex-direction: column;
   position: relative;
   width: 267px;
-  height: 324px;
+  min-height: 324px;
   margin-bottom: 40px;
 }
 
@@ -955,6 +968,8 @@
 }
 
 .catalog-name a {
+  position: relative;
+  z-index: 2;
   order: 1;
   font-size: 16px;
   font-weight: 500;
@@ -967,6 +982,7 @@
 .catalog-name a:hover,
 .catalog-name a:active {
   color: var(--link);
+  border-bottom: 1px solid var(--link-td);
 }
 
 .catalog-img {
@@ -1001,12 +1017,13 @@
   top: -6px;
   left: -13px;
   width: 293px;
-  height: 402px;
+  min-height: 402px;
   background-color: var(--white-opacity);
   border-radius: 4px;
 }
 
 .catalog-item-block {
+  /* position: relative; */
   margin: 0;
   display: none;
 }
@@ -1023,6 +1040,15 @@
   line-height: 24px;
   padding: 10px 16px;
   bottom: -52px;
+}
+
+/* для переполнения ??? */
+.button-catalog::before {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 20px;
+  top: -10px;
 }
 
 .hit-item::before {
@@ -1500,7 +1526,7 @@
   top: 338px;
   left: 50%;
   transform: translate(-50%);
-  /* display: none; */
+  display: none;
 }
 
 .modal-wrapper {
