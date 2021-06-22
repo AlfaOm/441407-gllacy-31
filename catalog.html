@@ -28,7 +28,7 @@
 
         <ul class="site-navigation">
           <li class="menu-items menu-current">
-            <a>
+            <a href="#">
               Каталог
             </a>
             <ul class="dropdown submenu">
@@ -127,29 +127,31 @@
                 2 товара
               </a>
               <section class="popup cart-popup">
-              <form class="cart-form" action="https://echo.htmlacademy.ru/" method="get">
-                <table class="table-cart">
-                  <tr>
-                    <td><button type="button" aria-label="Закрыть">X</button></td>
-                    <td><img src="img/cart-icecream-orange.png" width="33" height="33"></td>
-                    <td>Пломбир с апельсиновым джемом</td>
-                    <td>1,5 кг х <span>200 руб.</span></td>
-                    <td>300 руб.</td>
-                  </tr>
-                  <tr>
-                    <td><button type="button" aria-label="Закрыть">X</button></td>
-                    <td><img src="img/cart-icecream-strawberries.png" width="33" height="33"></td>
-                    <td>Клубничный пломбир с присыпкой из белого шоколада</td>
-                    <td>1,5 кг х <span>300 руб.</span></td>
-                    <td>450 руб.</td>
-                  </tr>
-                  <tr>
-                    <td colspan="4">Итого: 750 руб.</td>
-                  </tr>
-                </table>
-                <button class="button button-cart" type="submit">Оформить заказ</button>
-              </form>
-            </section>
+                <form class="cart-form" action="https://echo.htmlacademy.ru/" method="get">
+                  <table class="table-cart">
+                    <tr>
+                      <td><button type="button" aria-label="Закрыть"></button></td>
+                      <td><img src="img/cart-icecream-orange.png" width="33" height="33"></td>
+                      <td>Пломбир с апельсиновым джемом</td>
+                      <td>1,5 кг х <span>200 руб.</span></td>
+                      <td>300 руб.</td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" aria-label="Закрыть"></button></td>
+                      <td><img src="img/cart-icecream-strawberries.png" width="33" height="33"></td>
+                      <td>Клубничный пломбир с присыпкой из белого шоколада</td>
+                      <td>1,5 кг х <span>300 руб.</span></td>
+                      <td>450 руб.</td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">Итого: 750 руб.</td>
+                    </tr>
+                  </table>
+                  <div class="btn-cart-wrap">
+                    <button class="button button-cart" type="submit">Оформить заказ</button>
+                  </div>
+                </form>
+              </section>
             </div>
           </div>
 
@@ -182,12 +184,17 @@
           <form class="filter" action="https://echo.htmlacademy.ru" method="get">
             <fieldset>
               <legend>Сортировка:</legend>
-              <select name="#" id="#">
-                <option value="popular">по популярности</option>
-                <option value="inexpensive">сначала недорогие</option>
-                <option value="expensive">сначала дорогие</option>
-                <option value="fat-content">по жирности</option>
-              </select>
+              <div class="arrow-select">
+                <select name="#" id="#">
+                  <option value="popular">по популярности</option>
+                  <option value="inexpensive">сначала недорогие</option>
+                  <option value="expensive">сначала дорогие</option>
+                  <option value="fat-content">по жирности</option>
+                </select>
+                <svg width="11" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.5 10L0 0h11" fill="#ecf1ee" />
+                </svg>
+              </div>
             </fieldset>
             <fieldset>
               <legend>Цена: 100 ₽ – 500 ₽</legend>
@@ -196,11 +203,9 @@
                   <div class="scale">
                     <div class="bar" style="width: 45%; margin-left: 20%;"></div>
                   </div>
-                  <div class="toggle toggle-min" tabindex="0" style="left: 17%"></div>
-                  <div class="toggle toggle-max" tabindex="0" style="left: 62%"></div>
-
+                  <div class="toggle toggle-min" tabindex="0" style="left: 16%"></div>
+                  <div class="toggle toggle-max" tabindex="0" style="left: 61%"></div>
                 </div>
-
               </div>
             </fieldset>
             <fieldset>
@@ -419,8 +424,8 @@
             <li class="catalog-item">
               <h3 class="catalog-name">
                 <a href="#">
-                Сливочно-ванильное<br> с&nbsp;кусочками шоколада
-              </a>
+                  Сливочно-ванильное<br> с&nbsp;кусочками шоколада
+                </a>
               </h3>
               <p class="catalog-img">
                 <img src="img/catalog/vanilla-chocolate-pieces.jpg" width="267" height="267"
@@ -438,8 +443,8 @@
             <li class="catalog-item">
               <h3 class="catalog-name">
                 <a href="#">
-                Сливочноe с ментоловым сиропом
-              </a>
+                  Сливочноe с ментоловым сиропом
+                </a>
               </h3>
               <p class="catalog-img">
                 <img src="img/catalog/menthol-syrup.jpg" width="267" height="267" alt="Сливочноe с ментоловым сиропом">
@@ -456,9 +461,9 @@
             <li class="catalog-item">
               <h3 class="catalog-name">
                 <a href="#">
-                Сливочное с кусочками черного шоколада
-              </a>
-            </h3>
+                  Сливочное с кусочками черного шоколада
+                </a>
+              </h3>
               <p class="catalog-img">
                 <img src="img/catalog/chocolate-pieces.jpg" width="267" height="267"
                   alt="Сливочное с кусочками черного шоколада">
@@ -475,8 +480,8 @@
             <li class="catalog-item">
               <h3 class="catalog-name">
                 <a href="#">
-                Сливочное с мятным сиропом
-              </a>
+                  Сливочное с мятным сиропом
+                </a>
               </h3>
               <p class="catalog-img">
                 <img src="img/catalog/peppermint-syrup.jpg" width="267" height="267" alt="Сливочное с мятным сиропом">
@@ -493,11 +498,13 @@
           </ul>
 
           <ul class="pagination-list">
+            <li class="pagination-item-prev prev-not-active"><a href="#" aria-label="Назад"></a></li>
             <li class="pagination-item pagination-item-current"><a>1</a></li>
             <li class="pagination-item"><a href="#">2</a></li>
             <li class="pagination-item"><a href="#">3</a></li>
             <li class="pagination-item"><a href="#">4</a></li>
             <li class="pagination-item"><a href="#">5</a></li>
+            <li class="pagination-item-next next-not-active"><a href="#" aria-label="Вперед"></a></li>
           </ul>
 
         </section>
