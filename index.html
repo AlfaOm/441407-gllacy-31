@@ -15,7 +15,7 @@
 </head>
 
 <body class="page-body">
-  <div class="site-wrapper site-wrapper-2">
+  <div class="site-wrapper site-wrapper-1">
     <div class="container">
 
       <header class="main-header">
@@ -32,7 +32,7 @@
               <a href="#">
                 Каталог
               </a>
-              <ul class="dropdown submenu">
+              <ul class="submenu">
                 <li>
                   <p>Новинки</p>
                 </li>
@@ -78,7 +78,8 @@
               <!-- Форма поиска -->
 
               <div class="search-block">
-                <button class="search" type="button" aria-label="Поиск"><svg width="16" height="16" fill="none"
+                <button class="search" type="button" aria-label="Поиск">
+                  <svg aria-hidden="true" focusable="false" width="16" height="16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M16 14.67l-4.92-4.94A6.14 6.14 0 005.86.01 6.11 6.11 0 000 5.9a6.14 6.14 0 005.43 6.32 6.11 6.11 0 004.32-1.15l4.9 4.92L16 14.67zm-9.92-4.3A4.24 4.24 0 011.91 5.3a4.26 4.26 0 017.7-1.54 4.27 4.27 0 01-3.53 6.63z"
@@ -86,7 +87,7 @@
                   </svg>
                 </button>
                 <form class="search-form" action="https://echo.htmlacademy.ru/" method="get">
-                  <input type="search" name="search" placeholder="Крем-брюле">
+                  <input type="search" name="search" aria-label="Поиск по сайту" placeholder="Крем-брюле">
                 </form>
               </div>
 
@@ -95,16 +96,17 @@
               <div class="user-link">
 
                 <a class="login-link" href="#">
-                  <svg width="20" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" focusable="false" width="20" height="19" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.04 14.88l6.92-5.38-6.92-5.37v2.91H0v4.92h6.04v2.92z" fill="#fff" />
                     <path d="M18 0H5a2 2 0 00-2 2v2h2V2h13v15H5v-2H3v2a2 2 0 002 2h13a2 2 0 002-2V2a2 2 0 00-2-2z"
                       fill="#fff" />
                   </svg>Вход</a>
-                <form class="form-registration" action="https://echo.htmlacademy.ru/" method="post">
+                <form class="form-registration" action="https://echo.htmlacademy.ru/" method="post" target="_blank">
 
-                  <input type="email" name="email" placeholder="email@example.com">
+                  <input type="email" name="email" aria-label="Email" placeholder="email@example.com">
 
-                  <input type="password" name="password" placeholder="......">
+                  <input type="password" name="password" aria-label="Пароль" placeholder="......">
 
                   <button class="button-link" type="submit">Войти</button>
                   <p class="help-restore">
@@ -120,7 +122,8 @@
 
               <div class="cart">
                 <a class="main-cart" href="#">
-                  <svg width="21" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" focusable="false" width="21" height="20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M5.703 2l-.241-2H0v2h3.668l1.511 13h14.108L21 2H5.703zm11.8 11H6.973L5.965 4h12.727l-1.189 9zM7.034 20a2.008 2.008 0 002.015-2c0-1.105-.902-2-2.015-2a2.008 2.008 0 00-2.016 2c0 1.105.903 2 2.016 2zM16.103 20a2.008 2.008 0 002.015-2c0-1.105-.902-2-2.015-2a2.008 2.008 0 00-2.016 2c0 1.105.903 2 2.016 2z"
                       fill="#fff" />
@@ -148,20 +151,22 @@
         <h2 class="visually-hidden">Слайдер с изображениями мороженого</h2>
 
         <ul class="slider-list">
-          <li class="slider-item slide">
+          <li class="slider-item slide slide-current">
             <h3 class="slide-title">
               Крем-брюле и пломбир с малиновым джемом
             </h3>
-            <img src="img/slider-item-1.png" width="647" height="584" alt="">
+            <img src="img/slider-item-1.png" width="647" height="584"
+              alt="Два мороженых в конусообразных вафельных стаканчиках, кремового цвета с шоколадными прослойками и с малиново-белым градиентом">
             <a class="button slide-button" href="#">
               Давайте оба!
             </a>
           </li>
-          <li class="slider-item slide slide-current">
+          <li class="slider-item slide">
             <h3 class="slide-title">
               Шоколадный пломбир и&nbsp;лимонный сорбет
             </h3>
-            <img src="img/slider-item-2.png" width="647" height="584" alt="">
+            <img src="img/slider-item-2.png" width="647" height="584"
+              alt="Два мороженых в конусообразных вафельных стаканчиках, шоколадное с начинкой из крошек шоколада и светло-желтое с красными кусочками цукатов">
             <a class="button slide-button" href="#">
               Давайте оба!
             </a>
@@ -170,14 +175,15 @@
             <h3 class="slide-title">
               Пломбир с помадкой и&nbsp;клубничный щербет
             </h3>
-            <img src="img/slider-item-3.png" width="647" height="584" alt="">
+            <img src="img/slider-item-3.png" width="647" height="584"
+              alt="Два мороженых в конусообразных вафельных стаканчиках, кремового цвета, политое шоколадной помадкой и клубничного цвета">
             <a class="button slide-button" href="#">Давайте оба!</a>
           </li>
         </ul>
         <div class="slider-controls">
-          <button type="button" aria-label="Первый слайд"></button>
-          <button class="current" type="button" aria-label="Второй слайд"></button>
-          <button type="button" aria-label="Третий слайд"></button>
+          <button class="current" type="button" aria-label="Кнопка первого слайда"></button>
+          <button type="button" aria-label="Кнопка пвторого слайда"></button>
+          <button type="button" aria-label="Кнопка третьего слайда"></button>
         </div>
       </section>
     </div>
@@ -216,12 +222,12 @@
             <li class="catalog-item hit-item">
               <h3 class="catalog-name">
                 <a href="#">
-                Сливочное с апельсиновым джемом и цитрусовой стружкой
-              </a>
-            </h3>
+                  Сливочное с апельсиновым джемом и цитрусовой стружкой
+                </a>
+              </h3>
               <p class="catalog-img">
                 <img src="img/catalog/orange-jam.jpg" width="267" height="267"
-                  alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+                  alt="Мороженое желтого цвета с белой примесью">
               </p>
               <p class="catalog-price">
                 310 ₽<span>/кг</span>
@@ -240,7 +246,7 @@
               </h3>
               <p class="catalog-img">
                 <img src="img/catalog/coffee-chocolate.jpg" width="267" height="267"
-                  alt="Сливочно-кофейное с кусочками шоколада">
+                  alt="Мороженое светло-шоколадного цвета, посыпанное шоколадной крошкой">
               </p>
               <p class="catalog-price">
                 380 ₽<span>/кг</span>
@@ -257,7 +263,7 @@
               </h3>
               <p class="catalog-img">
                 <img src="img/catalog/strawberries-white-chocolate.jpg" width="267" height="267"
-                  alt="Сливочно-клубничное с присыпкой из белого шоколада">
+                  alt="Мороженое розового цвета, посыпанное белым шоколадом в виде сердечек">
               </p>
               <p class="catalog-price">
                 355 ₽<span>/кг</span>
@@ -276,7 +282,7 @@
               </h3>
               <p class="catalog-img">
                 <img src="img/catalog/cream-caramel.jpg" width="267" height="267"
-                  alt="Сливочное крем-брюле с карамельной подливкой">
+                  alt="Мороженое кремового цвета, смешанное с карамельной подливкой">
               </p>
               <p class="catalog-price">
                 415 ₽<span>/кг</span>
@@ -341,7 +347,7 @@
                 Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)
               </p>
               <form action="https://echo.htmlacademy.ru/" method="post">
-                <input type="email" name="email" placeholder="email@example.com">
+                <input type="email" name="email" aria-label="Email" placeholder="email@example.com">
                 <button class="button button-submit" type="submit">Отправить</button>
               </form>
             </div>
@@ -352,11 +358,17 @@
 
       <section class="contacts">
         <h2 class="visually-hidden">Карта с адресом и телефоном главного офиса магазина и кнопка обратной связи</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d998.4236453315485!2d30.317148725622705!3d59.96785656713688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5afc31%3A0x5f2ac55f567b2400!2sHTML%20Academy!5e0!3m2!1sru!2sru!4v1624215641427!5m2!1sru!2sru" width="1200" height="430" style="border:0;" allowfullscreen="" loading="lazy" title="Офис компании по адресу набережная реки Карповки, 5, литера П, Санкт-Петербург"></iframe>
-        <!-- <a class="address-map" href="https://yandex.ru/maps/-/CCUaIXvSPC">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d998.4236453315485!2d30.317148725622705!3d59.96785656713688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5afc31%3A0x5f2ac55f567b2400!2sHTML%20Academy!5e0!3m2!1sru!2sru!4v1624215641427!5m2!1sru!2sru"
+          width="1200" height="430" style="border:0;" allowfullscreen="" loading="lazy"
+          title="Офис компании по адресу набережная реки Карповки, 5, литера П, Санкт-Петербург"></iframe>
+
+        <a class="address-map"
+          href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d998.4236453315485!2d30.317148725622705!3d59.96785656713688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5afc31%3A0x5f2ac55f567b2400!2sHTML%20Academy!5e0!3m2!1sru!2sru!4v1624215641427!5m2!1sru!2sru">
           <img src="img/map_pin.png" width="1200" height="430"
             alt="Офис компании по адресу набережная реки Карповки, 5, литера П, Санкт-Петербург">
-        </a> -->
+        </a>
+
         <div class="address-wrap container">
           <address class="contacts-address">
             <div class="address-block">
@@ -386,7 +398,8 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Фейсбук</span>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -400,7 +413,8 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Вконтакте</span>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -419,7 +433,8 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Инстаграм</span>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -441,7 +456,8 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Твиттер</span>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -480,15 +496,16 @@
   </div>
 
   <!-- Модальное окно -->
+
   <div class="modal">
     <section class="modal-wrapper">
       <h2>Мы обязательно вам ответим!</h2>
       <form class="feedback-form" action="https://echo.htmlacademy.ru/" method="post">
         <p>
-          <input type="text" name="login" placeholder="Имя Фамилия">
+          <input type="text" name="login" aria-label="Логин" placeholder="Имя Фамилия">
         </p>
         <p>
-          <input type="email" name="email" placeholder="email@example.com">
+          <input type="email" name="email" aria-label="Email" placeholder="email@example.com">
         </p>
         <p>
           <textarea name="text" cols="30" rows="10" placeholder="В свободной форме"></textarea>
@@ -498,6 +515,8 @@
       <button class="modal-close" type="button" aria-label="Закрыть"></button>
     </section>
   </div>
+
+  <script src="js/js.js"></script>
 
 </body>
 
