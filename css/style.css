@@ -1157,7 +1157,7 @@ tr:last-child td {
   position: relative;
 
   height: 19px;
-  padding-top: 17px;
+  padding-top: 15px;
   padding-right: 21px;
   padding-left: 21px;
 
@@ -1179,7 +1179,7 @@ tr:last-child td {
 
 .range-controls .toggle {
   position: absolute;
-  top: 7px;
+  top: 6px;
 
   width: 4px;
   height: 4px;
