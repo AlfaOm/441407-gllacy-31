@@ -197,7 +197,8 @@
   height: 20px;
 }
 
-.menu-items:hover .submenu {
+.menu-items:hover .submenu,
+.menu-items:focus-within .submenu {
   display: block;
 }
 
@@ -284,6 +285,16 @@
   border-radius: 50%;
 }
 
+.search-block button:hover,
+.search-block button:focus {
+  background-color: var(--white);
+}
+
+.search-block:hover .search-form,
+.search-block:focus-within .search-form {
+  display: block;
+}
+
 .search svg {
   position: absolute;
   top: 7px;
@@ -294,16 +305,6 @@
 .search:hover path,
 .search:focus path {
   fill: var(--black);
-}
-
-.search-block button:hover,
-.search-block button:focus {
-  background-color: var(--white);
-}
-
-.search-block:hover .search-form,
-.search-block:focus-within .search-form {
-  display: block;
 }
 
 .search-form {
@@ -585,7 +586,8 @@
   border-radius: 4px;
 }
 
-.cart:hover .cart-form {
+.cart:hover .cart-form,
+.cart:focus-within .cart-form {
   display: block;
 }
 
@@ -667,17 +669,6 @@
 td:nth-child(4) span {
   color: var(--input-txt);
 }
-
-.table-cart td:nth-child(5) {
-  /* text-align: center; */
-}
-
-/* .table-cart tr:last-child {
-  text-align: right;
-  font-size: 15px;
-  font-weight: 700;
-  border-top: 1px solid #323232;
-} */
 
 tr:last-child td {
   padding-top: 16px;
@@ -1827,9 +1818,6 @@ tr:last-child td {
   position: relative;
 
   margin-bottom: 18px;
-
-  /* background-image: url("../img/map_pin.png"); */
-  /* background-repeat: no-repeat; */
 }
 
 .contacts iframe {
@@ -1855,19 +1843,6 @@ tr:last-child td {
   /* height: 430px; */
   object-fit: cover;
 }
-
-/* .address-map::before {
-  content: "";
-  position: absolute;
-  top: 107px;
-  left: 525px;
-
-  width: 80px;
-  height: 140px;
-
-  background-image: url(../img/svg/map-marker.svg);
-  background-repeat: no-repeat;
-} */
 
 .address-wrap {
   display: flex;
@@ -2091,12 +2066,11 @@ tr:last-child td {
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   top: 338px;
   left: 50%;
   transform: translate(-50%);
-
 
   display: none;
 }
@@ -2126,8 +2100,6 @@ tr:last-child td {
 
   background: var(--bg-popup);
   border-radius: 6px;
-
-  /* box-shadow: 0 100px 100px rgba(0, 0, 0, 0.7); */
 }
 
 .modal-wrapper h2 {
