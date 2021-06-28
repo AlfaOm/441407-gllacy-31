@@ -67,14 +67,51 @@ window.addEventListener("keydown", function(evt) {
 // Slider
 
 let siteWrapper = document.querySelector(".site-wrapper");
-let sliderList = document.querySelector(".slider-list");
-let sliderBtn = document.querySelector(".slider-controls");
+let sliderList1 = document.querySelector(".slide-1");
+let sliderList2 = document.querySelector(".slide-2");
+let sliderList3 = document.querySelector(".slide-3");
+let sliderBtn1 = document.querySelector(".btn-1");
+let sliderBtn2 = document.querySelector(".btn-2");
+let sliderBtn3 = document.querySelector(".btn-3");
 
-sliderBtn.addEventListener("click", function() {
+sliderBtn1.addEventListener("click", function() {
+  siteWrapper.classList.remove("site-wrapper-3");
+  siteWrapper.classList.remove("site-wrapper-2");
+  siteWrapper.classList.add("site-wrapper-1");
 
-    siteWrapper.classList.add("site-wrapper-2");
+  sliderList2.classList.remove("slide-current");
+  sliderList3.classList.remove("slide-current");
+  sliderList1.classList.add("slide-current");
 
+  sliderBtn2.classList.remove("current");
+  sliderBtn3.classList.remove("current");
+  sliderBtn1.classList.add("current");
+});
 
-  sliderList.classList.add("slide-current");
+sliderBtn2.addEventListener("click", function() {
+  siteWrapper.classList.remove("site-wrapper-1");
+  siteWrapper.classList.remove("site-wrapper-3");
+  siteWrapper.classList.add("site-wrapper-2");
 
+  sliderList1.classList.remove("slide-current");
+  sliderList3.classList.remove("slide-current");
+  sliderList2.classList.add("slide-current");
+
+  sliderBtn1.classList.remove("current");
+  sliderBtn3.classList.remove("current");
+  sliderBtn2.classList.add("current");
+});
+
+sliderBtn3.addEventListener("click", function() {
+  siteWrapper.classList.remove("site-wrapper-1");
+  siteWrapper.classList.remove("site-wrapper-2");
+  siteWrapper.classList.add("site-wrapper-3");
+
+  sliderList1.classList.remove("slide-current");
+  sliderList2.classList.remove("slide-current");
+  sliderList3.classList.add("slide-current");
+
+  sliderBtn1.classList.remove("current");
+  sliderBtn2.classList.remove("current");
+  sliderBtn3.classList.add("current");
 });

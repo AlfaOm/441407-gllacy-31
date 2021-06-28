@@ -180,7 +180,7 @@
   z-index: 5;
 
   width: 143px;
-  height: 171px;
+  min-height: 171px;
   padding-top: 13px;
 
   background-color: var(--white);
@@ -586,6 +586,17 @@
   border-radius: 4px;
 }
 
+.cart-form::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 0;
+  z-index: 0;
+
+  width: 130px;
+  height: 24px;
+}
+
 .cart:hover .cart-form,
 .cart:focus-within .cart-form {
   display: block;
@@ -853,7 +864,6 @@ tr:last-child td {
   position: absolute;
   bottom: 23px;
   left: 0;
-  /* z-index: 1; */
   display: flex;
   gap: 8px;
 }
@@ -1114,7 +1124,6 @@ tr:last-child td {
   /* стрелка */
   appearance: none;
   overflow: hidden;
-  /* background: url('../img/svg/arrow-sort.svg') no-repeat 171px var(--white-opacity); */
   cursor: pointer;
 }
 
@@ -1338,10 +1347,6 @@ tr:last-child td {
 
 /* Каталог. Хиты продаж */
 
-.catalog {
-  /* margin-bottom: 40px; */
-}
-
 .catalog-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1438,7 +1443,6 @@ tr:last-child td {
 }
 
 .catalog-item-block {
-  /* position: relative; */
   margin: 0;
 
   display: none;
@@ -1532,21 +1536,6 @@ tr:last-child td {
 .prev-not-active a {
   opacity: 0.2;
 }
-
-/* .pagination-item:first-child::before {
-  content: "";
-  position: absolute;
-  top: 7px;
-  right: 40px;
-
-  width: 7px;
-  height: 12px;
-
-  background-image: url(../img/svg/arrow-pagination.svg);
-  background-repeat: no-repeat;
-  transform: rotate(180deg);
-  opacity: 0.2;
-} */
 
 .pagination-item-next a::after {
   content: "";
@@ -1837,7 +1826,6 @@ tr:last-child td {
 .address-map img {
   display: block;
   width: 100%;
-  /* height: 430px; */
   object-fit: cover;
 }
 
