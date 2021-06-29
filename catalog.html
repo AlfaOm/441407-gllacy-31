@@ -31,7 +31,7 @@
             <a href="#">
               Каталог
             </a>
-            <ul class="dropdown submenu">
+            <ul class="submenu">
               <li>
                 <p>Новинки</p>
               </li>
@@ -85,7 +85,8 @@
                 </svg>
               </button>
               <form class="search-form" action="https://echo.htmlacademy.ru/" method="get">
-                <input type="search" name="search" placeholder="Крем-брюле">
+                <label class="visually-hidden" for="search-user">Поиск</label>
+                <input id="search-user" type="search" name="search" placeholder="Крем-брюле">
               </form>
             </div>
 
@@ -94,20 +95,20 @@
             <div class="user-link">
 
               <a class="login-link" href="#">
-                <svg width="20" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="20" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.04 14.88l6.92-5.38-6.92-5.37v2.91H0v4.92h6.04v2.92z" fill="#fff" />
                   <path d="M18 0H5a2 2 0 00-2 2v2h2V2h13v15H5v-2H3v2a2 2 0 002 2h13a2 2 0 002-2V2a2 2 0 00-2-2z"
                     fill="#fff" />
                 </svg>Вход</a>
-              <form class="form-registration" action="https://echo.htmlacademy.ru/" method="post">
-
-                <input type="email" name="email" placeholder="email@example.com">
-
-                <input type="password" name="password" placeholder="......">
+              <form class="form-registration" action="https://echo.htmlacademy.ru/" method="post" target="_blank">
+                <label class="visually-hidden" for="email-user">Email</label>
+                <input id="email-user" type="email" name="email" placeholder="email@example.com">
+                <label class="visually-hidden" for="password-user">Пароль</label>
+                <input id="password-user" type="password" name="password" placeholder="......">
 
                 <button class="button-link" type="submit">Войти</button>
                 <p class="help-restore">
-                  <a class="login-help restore" href="#">Забыли пароль?</a>
+                  <a class="login-help" href="#">Забыли пароль?</a>
                 </p>
                 <p class="help-registration">
                   <a class="login-help new-registration" href="#">Новая регистрация</a>
@@ -119,15 +120,15 @@
 
             <div class="cart">
               <a class="main-cart cart-add" href="#">
-                <svg width="21" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="21" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M5.703 2l-.241-2H0v2h3.668l1.511 13h14.108L21 2H5.703zm11.8 11H6.973L5.965 4h12.727l-1.189 9zM7.034 20a2.008 2.008 0 002.015-2c0-1.105-.902-2-2.015-2a2.008 2.008 0 00-2.016 2c0 1.105.903 2 2.016 2zM16.103 20a2.008 2.008 0 002.015-2c0-1.105-.902-2-2.015-2a2.008 2.008 0 00-2.016 2c0 1.105.903 2 2.016 2z"
                     fill="#fff" />
                 </svg>
                 2 товара
               </a>
-              <section class="popup cart-popup">
-                <form class="cart-form" action="https://echo.htmlacademy.ru/" method="get">
+              <section>
+                <form class="cart-form" action="https://echo.htmlacademy.ru/" method="get" target="_blank">
                   <table class="table-cart">
                     <tr>
                       <td><button type="button" aria-label="Закрыть"></button></td>
@@ -136,7 +137,7 @@
                       <td>1,5 кг х <span>200 руб.</span></td>
                       <td>300 руб.</td>
                     </tr>
-                    <tr>
+                    <tr class="cart-tr-2">
                       <td><button type="button" aria-label="Закрыть"></button></td>
                       <td><img src="img/cart-icecream-strawberries.png" width="33" height="33"></td>
                       <td>Клубничный пломбир с присыпкой из белого шоколада</td>
@@ -181,7 +182,7 @@
 
         <section class="filters">
           <h2 class="visually-hidden">Параметры выбора</h2>
-          <form class="filter" action="https://echo.htmlacademy.ru" method="get">
+          <form class="filter" action="https://echo.htmlacademy.ru" method="get" target="_blank">
             <fieldset>
               <legend>Сортировка:</legend>
               <div class="arrow-select">
@@ -203,8 +204,8 @@
                   <div class="scale">
                     <div class="bar" style="width: 45%; margin-left: 19%;"></div>
                   </div>
-                  <div class="toggle toggle-min" tabindex="0" style="left: 16%"></div>
-                  <div class="toggle toggle-max" tabindex="0" style="left: 61%"></div>
+                  <div class="toggle toggle-min" tabindex="0" style="left: 16%" aria-label="Минимальная цена"></div>
+                  <div class="toggle toggle-max" tabindex="0" style="left: 61%" aria-label="Максимальная цена"></div>
                 </div>
               </div>
             </fieldset>
@@ -269,7 +270,7 @@
 
         <!-- Каталог товаров -->
 
-        <section class="catalog">
+        <section>
           <h2 class="visually-hidden">Ассортимент сливочного мороженого</h2>
           <ul class="catalog-list">
             <li class="catalog-item">
@@ -498,13 +499,17 @@
           </ul>
 
           <ul class="pagination-list">
-            <li class="pagination-item-prev prev-not-active"><a href="#" aria-label="Назад"></a></li>
+            <li class="pagination-item pagination-item-prev prev-not-active"><a aria-label="Назад">
+              <svg aria-hidden="true" focusable="false" width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.84 5.66L.94.15A.57.57 0 00.53 0a.57.57 0 00-.38.15.47.47 0 000 .71L5.69 6 .16 11.17a.5.5 0 00-.16.35c0 .07.01.14.04.2a.5.5 0 00.12.16c.1.08.24.13.39.12a.54.54 0 00.37-.15l5.92-5.48a.47.47 0 000-.71z" fill="#fff"/></svg>
+            </a></li>
             <li class="pagination-item pagination-item-current"><a>1</a></li>
             <li class="pagination-item"><a href="#">2</a></li>
             <li class="pagination-item"><a href="#">3</a></li>
             <li class="pagination-item"><a href="#">4</a></li>
             <li class="pagination-item"><a href="#">5</a></li>
-            <li class="pagination-item-next next-not-active"><a href="#" aria-label="Вперед"></a></li>
+            <li class="pagination-item pagination-item-next next-not-active"><a href="#" aria-label="Вперед">
+              <svg aria-hidden="true" focusable="false" width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.84 5.66L.94.15A.57.57 0 00.53 0a.57.57 0 00-.38.15.47.47 0 000 .71L5.69 6 .16 11.17a.5.5 0 00-.16.35c0 .07.01.14.04.2a.5.5 0 00.12.16c.1.08.24.13.39.12a.54.54 0 00.37-.15l5.92-5.48a.47.47 0 000-.71z" fill="#fff"/></svg>
+            </a></li>
           </ul>
 
         </section>
@@ -524,7 +529,7 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Фейсбук</span>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -538,7 +543,7 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Вконтакте</span>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -557,7 +562,7 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Инстаграм</span>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -579,7 +584,7 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Твиттер</span>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
