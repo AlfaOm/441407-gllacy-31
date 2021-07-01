@@ -1,54 +1,32 @@
 // Slider
 
-let siteWrapper = document.querySelector(".site-wrapper");
-let sliderList1 = document.querySelector(".slide-1");
-let sliderList2 = document.querySelector(".slide-2");
-let sliderList3 = document.querySelector(".slide-3");
-let sliderBtn1 = document.querySelector(".btn-1");
-let sliderBtn2 = document.querySelector(".btn-2");
-let sliderBtn3 = document.querySelector(".btn-3");
+const siteWrapper = document.querySelector(".site-wrapper");
+const slides = document.querySelectorAll(".slider-item");
+const buttons = document.querySelectorAll(".slider-controls button");
 
-sliderBtn1.addEventListener("click", function () {
-  siteWrapper.classList.remove("site-wrapper-3");
-  siteWrapper.classList.remove("site-wrapper-2");
-  siteWrapper.classList.add("site-wrapper-1");
+let currentSlide = document.querySelector(".slide-current");
+let currentBtn = document.querySelector(".slider-controls button.current");
 
-  sliderList2.classList.remove("slide-current");
-  sliderList3.classList.remove("slide-current");
-  sliderList1.classList.add("slide-current");
+const changeCurrentSlide = (index) => {
+  currentSlide.classList.remove("slide-current");
+  slides[index].classList.add("slide-current");
+  currentSlide = slides[index];
+  currentBtn.classList.remove("current");
+  buttons[index].classList.add("current");
+  currentBtn = buttons[index];
+  siteWrapper.className = ("site-wrapper site-wrapper-" + (index + 1));
+}
 
-  sliderBtn2.classList.remove("current");
-  sliderBtn3.classList.remove("current");
-  sliderBtn1.classList.add("current");
-});
+for (let i = 0; i < slides.length; i++) {
+  buttons[i].addEventListener("click", (evt) => {
+    evt.preventDefault();
+    if (evt.target === currentBtn) {
+      return;
+    }
+    changeCurrentSlide(i);
+  });
+}
 
-sliderBtn2.addEventListener("click", function () {
-  siteWrapper.classList.remove("site-wrapper-1");
-  siteWrapper.classList.remove("site-wrapper-3");
-  siteWrapper.classList.add("site-wrapper-2");
-
-  sliderList1.classList.remove("slide-current");
-  sliderList3.classList.remove("slide-current");
-  sliderList2.classList.add("slide-current");
-
-  sliderBtn1.classList.remove("current");
-  sliderBtn3.classList.remove("current");
-  sliderBtn2.classList.add("current");
-});
-
-sliderBtn3.addEventListener("click", function () {
-  siteWrapper.classList.remove("site-wrapper-1");
-  siteWrapper.classList.remove("site-wrapper-2");
-  siteWrapper.classList.add("site-wrapper-3");
-
-  sliderList1.classList.remove("slide-current");
-  sliderList2.classList.remove("slide-current");
-  sliderList3.classList.add("slide-current");
-
-  sliderBtn1.classList.remove("current");
-  sliderBtn2.classList.remove("current");
-  sliderBtn3.classList.add("current");
-});
 
 // Modal window
 
