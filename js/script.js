@@ -28,6 +28,7 @@ for (let i = 0; i < slides.length; i++) {
 }
 
 
+
 // Modal window
 
 let feedback = document.querySelector(".button-feedback");
