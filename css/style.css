@@ -754,6 +754,10 @@ tr:last-child td {
   z-index: 0;
 
   background-color: var(--bg-site-1);
+
+  transition-delay: 0.5s;
+  transition-timing-function: linear;
+  transition-duration: 2s;
 }
 
 .site-wrapper-1::after {
@@ -769,6 +773,10 @@ tr:last-child td {
 
   background: var(--bg-blur-1);
   filter: blur(120px);
+
+  transition-delay: 1s;
+  transition-timing-function: ease-in-out;
+  transition-duration: 3s;
 }
 
 .site-wrapper-2 {
@@ -776,6 +784,10 @@ tr:last-child td {
   z-index: 1;
 
   background-color: var(--bg-site-2);
+
+  transition-delay: 0.5s;
+  transition-timing-function: linear;
+  transition-duration: 2s;
 }
 
 .site-wrapper-2::before {
@@ -791,6 +803,10 @@ tr:last-child td {
 
   background: var(--bg-blur-2);
   filter: blur(120px);
+
+  transition-delay: 1s;
+  transition-timing-function: ease-in-out;
+  transition-duration: 3s;
 }
 
 .site-wrapper-3 {
@@ -798,6 +814,10 @@ tr:last-child td {
   z-index: 1;
 
   background-color: var(--bg-site-3);
+
+  transition-delay: 0.5s;
+  transition-timing-function: linear;
+  transition-duration: 2s;
 }
 
 .site-wrapper-3::before {
@@ -813,6 +833,10 @@ tr:last-child td {
 
   background: var(--bg-blur-3);
   filter: blur(120px);
+
+  transition-delay: 1s;
+  transition-timing-function: ease-in-out;
+  transition-duration: 3s;
 }
 
 .slider {
