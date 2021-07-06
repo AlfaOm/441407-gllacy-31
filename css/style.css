@@ -1074,7 +1074,7 @@ tr:last-child td {
   -moz-column-gap: 26px;
   column-gap: 26px;
 
-  height: 229px;
+  min-height: 229px;
   margin-bottom: 40px;
 }
 
@@ -1084,11 +1084,14 @@ tr:last-child td {
 
   padding-top: 16px;
   padding-left: 16px;
+  padding-bottom: 22px;
   padding-right: 22px;
 
   background-color: var(--bg-bonus-red);
-  background-image: url("../img/background/raspberry.jpg");
+  background-image: url("../img/background/raspberry.png");
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   border-radius: 16px;
 }
 
@@ -1098,11 +1101,14 @@ tr:last-child td {
 
   padding-top: 16px;
   padding-left: 16px;
+  padding-bottom: 22px;
   padding-right: 22px;
 
   background-color: var(--bg-bonus-choco);
-  background-image: url("../img/background/chocolate.jpg");
+  background-image: url("../img/background/chocolate.png");
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   border-radius: 16px;
 }
 
@@ -1117,6 +1123,8 @@ tr:last-child td {
 
 .bonus-text {
   margin: 0;
+  padding-bottom: 42px;
+
   font-size: 18px;
   font-weight: 700;
   line-height: 22px;
@@ -1124,7 +1132,6 @@ tr:last-child td {
 
 .button-bonus {
   position: relative;
-  top: 42px;
   align-self: flex-end;
 
   padding: 12px 22px;
@@ -1729,11 +1736,12 @@ tr:last-child td {
 
 .new-blog {
   width: 560px;
-  height: 220px;
+  min-height: 220px;
 
   background-color: var(--white);
   background-image: url(../img/background/srawberries.jpg);
   background-repeat: no-repeat;
+  background-position: center;
   border-radius: 16px;
 }
 
@@ -1752,6 +1760,7 @@ tr:last-child td {
   display: block;
   width: 287px;
   padding-top: 2px;
+  padding-bottom: 19px;
   padding-left: 20px;
 
   font-size: 24px;
@@ -1776,20 +1785,27 @@ tr:last-child td {
   z-index: 1;
 
   width: 560px;
-  height: 220px;
+  min-height: 220px;
   padding: 5px 6px;
   box-sizing: border-box;
 
-  background-image: url(../img/background/background-post.png);
-  background-repeat: no-repeat;
+  background: repeating-linear-gradient(
+    135deg,
+    #f8f7f4,
+    #f8f7f4 7px,
+    #92cdff 7px,
+    #92cdff 14px,
+    #f8f7f4 14px,
+    #f8f7f4 21px,
+    #fe9e90 21px,
+    #fe9e90 28px
+  );
+  border-radius: 16px;
 }
 
 .subscribe-wrap {
   content: "";
   z-index: 2;
-
-  width: 548px;
-  height: 100%;
 
   background: var(--bg-subscribe);
   border-radius: 16px;
@@ -1797,15 +1813,19 @@ tr:last-child td {
 
 .subscribe-text {
   margin: 0;
-  margin-bottom: 40px;
   padding-top: 25px;
   padding-right: 16px;
+  padding-bottom: 40px;
   padding-left: 20px;
 
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
   color: var(--txt-subscribe);
+}
+
+.subscribe form {
+  padding-bottom: 35px;
 }
 
 .subscribe-wrap input {
@@ -1971,6 +1991,7 @@ tr:last-child td {
 
 .footer-socials-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 
   margin: 0;
