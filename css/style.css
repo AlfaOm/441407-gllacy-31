@@ -278,6 +278,7 @@
 .user-wrap {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 10px;
   margin-bottom: 21px;
 }
@@ -1078,23 +1079,7 @@ tr:last-child td {
   margin-bottom: 40px;
 }
 
-.bonus-content-1 {
-  display: flex;
-  flex-direction: column;
-
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-bottom: 22px;
-  padding-right: 22px;
-
-  background-color: var(--bg-bonus-red);
-  background-image: url("../img/background/raspberry.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 16px;
-}
-
+.bonus-content-1,
 .bonus-content-2 {
   display: flex;
   flex-direction: column;
@@ -1104,12 +1089,20 @@ tr:last-child td {
   padding-bottom: 22px;
   padding-right: 22px;
 
-  background-color: var(--bg-bonus-choco);
-  background-image: url("../img/background/chocolate.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 16px;
+}
+
+.bonus-content-1 {
+  background-color: var(--bg-bonus-red);
+  background-image: url("../img/background/raspberry.png");
+}
+
+.bonus-content-2 {
+  background-color: var(--bg-bonus-choco);
+  background-image: url("../img/background/chocolate.png");
 }
 
 .bonus-header {
@@ -1792,20 +1785,19 @@ tr:last-child td {
   background: repeating-linear-gradient(
     135deg,
     #f8f7f4,
-    #f8f7f4 7px,
+    #f8f7f4 6px,
     #92cdff 7px,
-    #92cdff 14px,
+    #92cdff 13.5px,
     #f8f7f4 14px,
-    #f8f7f4 21px,
+    #f8f7f4 20px,
     #fe9e90 21px,
-    #fe9e90 28px
+    #fe9e90 27.5px
   );
   border-radius: 16px;
 }
 
 .subscribe-wrap {
-  content: "";
-  z-index: 2;
+  height: 100%;
 
   background: var(--bg-subscribe);
   border-radius: 16px;
@@ -2298,6 +2290,16 @@ tr:last-child td {
 
 .feedback-form input::-moz-placeholder,
 .feedback-form textarea::-moz-placeholder {
+  font-weight: 400;
+  color: var(--input-txt);
+}
+
+.feedback-form input::-webkit-input-placeholder, .feedback-form textarea::-webkit-input-placeholder {
+  font-weight: 400;
+  color: var(--input-txt);
+}
+
+.feedback-form input::-moz-placeholder, .feedback-form textarea::-moz-placeholder {
   font-weight: 400;
   color: var(--input-txt);
 }
