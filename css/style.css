@@ -552,8 +552,11 @@
   color: var(--input-txt);
 }
 
+.btn-help-user-wrap {
+  display: flex;
+}
+
 .button-link {
-  float: left;
   margin-top: 20px;
   margin-left: 19px;
   margin-right: 20px;
@@ -1048,6 +1051,7 @@ tr:last-child td {
   font-weight: 700;
   color: var(--white);
   text-align: center;
+  vertical-align: middle;
 
   text-decoration: none;
   text-shadow: var(--txt-shadow-btn);
@@ -1490,15 +1494,17 @@ tr:last-child td {
   line-height: 35px;
 }
 
-.catalog-item-block::before {
-  content: "";
+.catalog-item-block {
+  /* content: ""; */
   position: absolute;
-  z-index: 1;
+  /* z-index: 1; */
   top: -6px;
-  left: -13px;
+  left: -12px;
 
   width: 293px;
-  min-height: 402px;
+  /* min-height: 402px; */
+  height: 100%;
+  padding-bottom: 76px;
 
   background-color: var(--white-opacity);
   border-radius: 4px;
@@ -1517,8 +1523,8 @@ tr:last-child td {
 
 .button-catalog {
   position: absolute;
-  left: 33px;
-  bottom: -52px;
+  left: 47px;
+  bottom: 19px;
   z-index: 2;
 
   padding: 10px 16px;
@@ -2294,12 +2300,14 @@ tr:last-child td {
   color: var(--input-txt);
 }
 
-.feedback-form input::-webkit-input-placeholder, .feedback-form textarea::-webkit-input-placeholder {
+.feedback-form input::-webkit-input-placeholder,
+.feedback-form textarea::-webkit-input-placeholder {
   font-weight: 400;
   color: var(--input-txt);
 }
 
-.feedback-form input::-moz-placeholder, .feedback-form textarea::-moz-placeholder {
+.feedback-form input::-moz-placeholder,
+.feedback-form textarea::-moz-placeholder {
   font-weight: 400;
   color: var(--input-txt);
 }

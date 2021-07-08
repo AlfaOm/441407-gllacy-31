@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.min.css">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page-body">
@@ -95,7 +95,8 @@
             <div class="user-link">
 
               <a class="login-link" href="#">
-                <svg aria-hidden="true" focusable="false" width="20" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="20" height="19" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.04 14.88l6.92-5.38-6.92-5.37v2.91H0v4.92h6.04v2.92z" fill="#fff" />
                   <path d="M18 0H5a2 2 0 00-2 2v2h2V2h13v15H5v-2H3v2a2 2 0 002 2h13a2 2 0 002-2V2a2 2 0 00-2-2z"
                     fill="#fff" />
@@ -106,13 +107,17 @@
                 <label class="visually-hidden" for="password-user">Пароль</label>
                 <input id="password-user" type="password" name="password" placeholder="......">
 
-                <button class="button-link" type="submit">Войти</button>
-                <p class="help-restore">
-                  <a class="login-help" href="#">Забыли пароль?</a>
-                </p>
-                <p class="help-registration">
-                  <a class="login-help new-registration" href="#">Новая регистрация</a>
-                </p>
+                <div class="btn-help-user-wrap">
+                  <button class="button-link" type="submit">Войти</button>
+                  <div class="help-user-wrap">
+                    <p class="help-restore">
+                      <a class="login-help" href="#">Забыли пароль?</a>
+                    </p>
+                    <p class="help-registration">
+                      <a class="login-help new-registration" href="#">Новая регистрация</a>
+                    </p>
+                  </div>
+                </div>
               </form>
             </div>
 
@@ -120,7 +125,8 @@
 
             <div class="cart">
               <a class="main-cart cart-add" href="#">
-                <svg aria-hidden="true" focusable="false" width="21" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="21" height="20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M5.703 2l-.241-2H0v2h3.668l1.511 13h14.108L21 2H5.703zm11.8 11H6.973L5.965 4h12.727l-1.189 9zM7.034 20a2.008 2.008 0 002.015-2c0-1.105-.902-2-2.015-2a2.008 2.008 0 00-2.016 2c0 1.105.903 2 2.016 2zM16.103 20a2.008 2.008 0 002.015-2c0-1.105-.902-2-2.015-2a2.008 2.008 0 00-2.016 2c0 1.105.903 2 2.016 2z"
                     fill="#fff" />
@@ -132,14 +138,16 @@
                   <table class="table-cart">
                     <tr>
                       <td><button type="button" aria-label="Закрыть"></button></td>
-                      <td><img src="img/cart-icecream-orange.png" width="33" height="33"></td>
+                      <td><img src="img/cart-icecream-orange.png" width="33" height="33"
+                          alt="Миниизображение выбранного мороженого"></td>
                       <td>Пломбир с апельсиновым джемом</td>
                       <td>1,5 кг х <span>200 руб.</span></td>
                       <td>300 руб.</td>
                     </tr>
                     <tr class="cart-tr-2">
                       <td><button type="button" aria-label="Закрыть"></button></td>
-                      <td><img src="img/cart-icecream-strawberries.png" width="33" height="33"></td>
+                      <td><img src="img/cart-icecream-strawberries.png" width="33" height="33"
+                          alt="Миниизображение выбранного мороженого"></td>
                       <td>Клубничный пломбир с присыпкой из белого шоколада</td>
                       <td>1,5 кг х <span>300 руб.</span></td>
                       <td>450 руб.</td>
@@ -186,7 +194,8 @@
             <fieldset>
               <legend>Сортировка:</legend>
               <div class="arrow-select">
-                <select name="#" id="#">
+                <label class="visually-hidden" for="select-sort">Выбрать по критериям</label>
+                <select name="select-guideline" id="select-sort">
                   <option value="popular">по популярности</option>
                   <option value="inexpensive">сначала недорогие</option>
                   <option value="expensive">сначала дорогие</option>
@@ -485,7 +494,8 @@
                 </a>
               </h3>
               <p class="catalog-img">
-                <img src="img/catalog/peppermint-syrup.jpg" width="267" height="267" alt="Мороженое светло-салатового оттенка">
+                <img src="img/catalog/peppermint-syrup.jpg" width="267" height="267"
+                  alt="Мороженое светло-салатового оттенка">
               </p>
               <p class="catalog-price">
                 420 ₽<span>/кг</span>
@@ -500,16 +510,26 @@
 
           <ul class="pagination-list">
             <li class="pagination-item pagination-item-prev prev-not-active"><a aria-label="Назад">
-              <svg aria-hidden="true" focusable="false" width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.84 5.66L.94.15A.57.57 0 00.53 0a.57.57 0 00-.38.15.47.47 0 000 .71L5.69 6 .16 11.17a.5.5 0 00-.16.35c0 .07.01.14.04.2a.5.5 0 00.12.16c.1.08.24.13.39.12a.54.54 0 00.37-.15l5.92-5.48a.47.47 0 000-.71z" fill="#fff"/></svg>
-            </a></li>
+                <svg aria-hidden="true" focusable="false" width="7" height="12" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.84 5.66L.94.15A.57.57 0 00.53 0a.57.57 0 00-.38.15.47.47 0 000 .71L5.69 6 .16 11.17a.5.5 0 00-.16.35c0 .07.01.14.04.2a.5.5 0 00.12.16c.1.08.24.13.39.12a.54.54 0 00.37-.15l5.92-5.48a.47.47 0 000-.71z"
+                    fill="#fff" />
+                </svg>
+              </a></li>
             <li class="pagination-item pagination-item-current"><a>1</a></li>
             <li class="pagination-item"><a href="#">2</a></li>
             <li class="pagination-item"><a href="#">3</a></li>
             <li class="pagination-item"><a href="#">4</a></li>
             <li class="pagination-item"><a href="#">5</a></li>
             <li class="pagination-item pagination-item-next next-not-active"><a href="#" aria-label="Вперед">
-              <svg aria-hidden="true" focusable="false" width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.84 5.66L.94.15A.57.57 0 00.53 0a.57.57 0 00-.38.15.47.47 0 000 .71L5.69 6 .16 11.17a.5.5 0 00-.16.35c0 .07.01.14.04.2a.5.5 0 00.12.16c.1.08.24.13.39.12a.54.54 0 00.37-.15l5.92-5.48a.47.47 0 000-.71z" fill="#fff"/></svg>
-            </a></li>
+                <svg aria-hidden="true" focusable="false" width="7" height="12" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.84 5.66L.94.15A.57.57 0 00.53 0a.57.57 0 00-.38.15.47.47 0 000 .71L5.69 6 .16 11.17a.5.5 0 00-.16.35c0 .07.01.14.04.2a.5.5 0 00.12.16c.1.08.24.13.39.12a.54.54 0 00.37-.15l5.92-5.48a.47.47 0 000-.71z"
+                    fill="#fff" />
+                </svg>
+              </a></li>
           </ul>
 
         </section>
@@ -529,7 +549,8 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Фейсбук</span>
-                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -543,7 +564,8 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Вконтакте</span>
-                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -562,7 +584,8 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Инстаграм</span>
-                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -584,7 +607,8 @@
             <li>
               <a class="social-button" href="#">
                 <span class="visually-hidden">Твиттер</span>
-                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" focusable="false" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M18 35C27.3888 35 35 27.3888 35 18C35 8.61116 27.3888 1 18 1C8.61116 1 1 8.61116 1 18C1 27.3888 8.61116 35 18 35Z"
                     stroke="white" stroke-opacity="0.5" stroke-width="2" />
@@ -609,8 +633,8 @@
 
         <section class="footer-copyright">
           <p>
-            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/svg/logo-html-academy.svg"
-                alt="htmlacademy"></a>
+            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/svg/logo-html-academy.svg" width="108"
+                height="31" alt="htmlacademy"></a>
           </p>
           <p>
             Сделано в <a class="copyright-link" href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> &copy;
